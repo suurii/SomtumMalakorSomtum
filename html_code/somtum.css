@@ -44,6 +44,8 @@ body{
 .container0{
     width:80%;
     text-align: center;
+    background: #121212;
+    border-radius:  20px 0 0 20px  ;
 }
 .container2{
     width:20%;
@@ -56,7 +58,7 @@ body{
     /* height: 300px; */
     margin-left:10px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: #000000;
     mix-blend-mode: normal;
     border-radius: 0 20px  20px  0;
 
@@ -107,16 +109,19 @@ h1{
 .dfa{
     width:100%;
     height: 700px;
-    background-color:white;
-    text-align: center;
-    opacity: 0.1;
+    /* background-color:rgba(255, 255, 255,0.1); */
+
+
 }
 .outsom{
     width:300px;
     height: 200px;
     margin-top:10px;
 }
-
+.dfaimg{
+    width:100%;
+    height: 100%;
+}
 h2{
     text-align: center;
     font-family: 'TH SarabunPSK';
@@ -124,5 +129,117 @@ h2{
     font-size: 35px;
     color: #FFFFFF;
     margin:0;
+}
+
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    display: block;
+    margin: auto;
+    width: 252px;
+    /* height: 50px; */
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+  .select-selected {
+    background-color: #000000;
+    border: 3px solid #006A31;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 20px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-selected {
+    color: #ffffff;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    border: 3px solid #006A31;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  .select-items div{
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: #000000;
+    top: 64px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+.visa{background-image:url('image/spi2.svg');}
+.mastercard{background-image:url('image/spi1.svg');}
+.plara{background-image:url('image/plara.svg');}
+.cf{background-image:url('image/confirm.svg');}
+
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
 
