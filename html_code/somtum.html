@@ -196,30 +196,18 @@
           )
         );
 
-      // read in the JSON data from the "mySavedModel" element
-      load();
-    }
-
-    // Show the diagram's model in JSON format
-    // function save() {
-    //   document.getElementById("mySavedModel").value = myDiagram.model.toJson();
-    // }
-    function load() {
-      myDiagram.model = go.Model.fromJson(
-          { "class": "go.GraphLinksModel",
-            "nodeKeyProperty": "id",
-            "nodeDataArray": [
-            {"id":-1, "loc":"155 -138", "category":"Start"},
-            {"id":0, "loc":"190 15", "text":"Shopping"},
-            {"id":1, "loc":"353 32", "text":"Browse Items"},
-            {"id":2, "loc":"353 166", "text":"Search Items"},
-            {"id":3, "loc":"512 12", "text":"View Item"},
-            {"id":4, "loc":"661 17", "text":"View Cart"},
-            {"id":5, "loc":"644 171", "text":"Update Cart"},
-            {"id":6, "loc":"800 96", "text":"Checkout"},
-            {"id":-2, "loc":"757 229", "category":"End"}
-            ],
-            "linkDataArray": [
+      nodeDataArray = [
+            {"key":-1, "loc":"155 -138", "category":"Start"},
+            {"key":0, "loc":"190 15", "text":"Shopping"},
+            {"key":1, "loc":"353 32", "text":"Browse Items"},
+            {"key":2, "loc":"353 166", "text":"Search Items"},
+            {"key":3, "loc":"512 12", "text":"View Item"},
+            {"key":4, "loc":"661 17", "text":"View Cart"},
+            {"key":5, "loc":"644 171", "text":"Update Cart"},
+            {"key":6, "loc":"800 96", "text":"Checkout"},
+            {"key":-2, "loc":"757 229", "category":"End"}
+            ]; 
+      linkDataArray = [
                 { "from": -1, "to": 0, "text": "Visit online store" },
                 { "from": 0, "to": 1,  "progress": "true", "text": "Browse" },
                 { "from": 0, "to": 2,  "progress": "true", "text": "Use search bar" },
@@ -235,10 +223,10 @@
                 { "from": 4, "to": 6,  "progress": "true", "text": "Proceed" },
                 { "from": 6, "to": 5,  "text": "Update needed" },
                 { "from": 6, "to": -2, "progress": "true", "text": "Purchase made" }
-            ]
-            });
+            ];
+      myDiagram.model = new go.GraphLinksModel(nodeDataArray,linkDataArray);
     }
-
+    
     </script>
 
 
