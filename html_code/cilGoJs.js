@@ -59,6 +59,8 @@ var now = -1;
 // ]; 
 
 nodeDataArray = [
+    {"key":-1, "loc":"-100 0","text" :""},
+  
     {"key":0, "loc":"0 0", "category":"Start"},
     
     {"key":1, "loc":"200 -100", "text":"Shopping", "category":"Start"},
@@ -318,10 +320,11 @@ var roundedRectangleParams = {
       myDiagram.linkTemplate =
         $(go.Link,  // the whole link panel
           {
+            // routing: go.Link.AvoidsNodes,
             curve: go.Link.Bezier,
-            adjusting: go.Link.Stretch,
-            reshapable: true, relinkableFrom: true, relinkableTo: true,
-            toShortLength: 3
+            // adjusting: go.Link.Stretch,
+            // reshapable: true, relinkableFrom: true, relinkableTo: true,
+            // toShortLength: 3
           },
           new go.Binding("points").makeTwoWay(),
           new go.Binding("curviness"),
@@ -377,12 +380,11 @@ var roundedRectangleParams = {
               })
           );
         myDiagram.add(highlighter);
-        highlightNode(-1);
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     myDiagram.model = new go.GraphLinksModel(nodeDataArray,linkDataArray);
     myDiagram.model.isReadOnly = true;
-    highlightNode(-1);
+    highlightNode(0);
     }
 
     function highlightNode(nodeId) {
