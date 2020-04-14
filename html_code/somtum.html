@@ -79,7 +79,8 @@
             "undoManager.isEnabled": true,
             positionComputation: function (diagram, pt) {
               return new go.Point(Math.floor(pt.x), Math.floor(pt.y));
-            }
+            },
+            "ChangedSelection": showLocalOnFullClick
           });
 
       // define the Node template
@@ -165,16 +166,16 @@
           $(go.Shape,  // the link shape
             { strokeWidth: 1.5 },
             new go.Binding('stroke', 'progress', function(progress) {
-              return progress ? "#52ce60" /* green */ : 'black';
+              return progress=="true" ? "#52ce60" /* green */ : 'black';
             }),
             new go.Binding('strokeWidth', 'progress', function(progress) {
-              return progress ? 2.5 : 1.5;
+              return progress=="true" ? 2.5 : 1.5;
             })
             ),
           $(go.Shape,  // the arrowhead
             { toArrow: "standard", stroke: null },
             new go.Binding('fill', 'progress', function(progress) {
-              return progress ? "#52ce60" /* green */ : 'black';
+              return progress=="true" ? "#52ce60" /* green */ : 'black';
             }),
             ),
           $(go.Panel, "Auto",
@@ -196,6 +197,37 @@
           )
         );
 
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Create a part in the background of the full diagram to highlight the selected node
+        highlighter =
+          $(go.Part, "Auto",
+            {
+              layerName: "Background",
+              selectable: false,
+              isInDocumentBounds: false,
+              locationSpot: go.Spot.Center
+            },
+            $(go.Shape, "Ellipse",
+              {
+                fill: $(go.Brush, "Radial", { 0.0: "yellow", 1.0: "white" }),
+                stroke: null,
+                desiredSize: new go.Size(100, 100)
+              })
+          );
+        myDiagram.add(highlighter);
+
+    function showLocalOnFullClick() {
+      // var node = myDiagram.selection.first();
+      var node = myDiagram.findNodeForKey(3);
+      // console.log(node);
+      if (node !== null) {
+        // make sure the selected node is in the viewport
+        myDiagram.scrollToRect(node.actualBounds);
+        // move the large yellow node behind the selected node to highlight it
+        highlighter.location = node.location;;
+      }
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       nodeDataArray = [
             {"key":-1, "loc":"155 -138", "category":"Start"},
             {"key":0, "loc":"190 15", "text":"Shopping"},
@@ -209,7 +241,7 @@
             ]; 
       linkDataArray = [
                 { "from": -1, "to": 0, "text": "Visit online store" },
-                { "from": 0, "to": 1,  "progress": "true", "text": "Browse" },
+                { "from": 0, "to": 1,  "progress": "false", "text": "Browse" },
                 { "from": 0, "to": 2,  "progress": "true", "text": "Use search bar" },
                 { "from": 1, "to": 2,  "progress": "true", "text": "Use search bar" },
                 { "from": 2, "to": 3,  "progress": "true", "text": "Click item" },
@@ -226,7 +258,7 @@
             ];
       myDiagram.model = new go.GraphLinksModel(nodeDataArray,linkDataArray);
     }
-    
+
     </script>
 
 
