@@ -1,33 +1,145 @@
 var now = -1;
 
+// nodeDataArray = [
+//     {"key":-1, "loc":"155 -138", "category":"Start"},
+//     {"key":0, "loc":"190 15", "text":"Shopping"},
+//     {"key":1, "loc":"353 32", "text":"Browse Items"},
+//     {"key":2, "loc":"353 166", "text":"Search Items"},
+//     {"key":3, "loc":"512 12", "text":"View Item"},
+//     {"key":4, "loc":"661 17", "text":"View Cart"},
+//     {"key":5, "loc":"644 171", "text":"Update Cart"},
+//     {"key":6, "loc":"800 96", "text":"Checkout"},
+//     {"key":-2, "loc":"757 229", "category":"End"}
+// ]; 
+
+// linkDataArray = [
+//     { "from": -1, "to": 0, "text": "Visit online store" },
+//     { "from": 0, "to": 1,  "progress": "false", "text": "Browse" },
+//     { "from": 0, "to": 2,  "progress": "true", "text": "Use search bar" },
+//     { "from": 1, "to": 2,  "progress": "true", "text": "Use search bar" },
+//     { "from": 2, "to": 3,  "progress": "true", "text": "Click item" },
+//     { "from": 2, "to": 2,  "text": "Another search", "curviness": 20 },
+//     { "from": 1, "to": 3,  "progress": "true", "text": "Click item" },
+//     { "from": 3, "to": 0,  "text": "Not interested", "curviness": -100 },
+//     { "from": 3, "to": 4,  "progress": "true", "text": "Add to cart" },
+//     { "from": 4, "to": 0,  "text": "More shopping", "curviness": -150 },
+//     { "from": 4, "to": 5,  "text": "Update needed", "curviness": -50 },
+//     { "from": 5, "to": 4,  "text": "Update made" },
+//     { "from": 4, "to": 6,  "progress": "true", "text": "Proceed" },
+//     { "from": 6, "to": 5,  "text": "Update needed" },
+//     { "from": 6, "to": -2, "progress": "true", "text": "Purchase made" }
+// ];
+////////////////////////////////////////////////////////////////////////////////////
+// nodeDataArray = [
+//     {"key":-1, "loc":"0 0", "category":"Start"},
+    
+//     {"key":0, "loc":"200 -100", "text":"Shopping"},
+//     {"key":1, "loc":"200 100", "text":"Browse Items"},
+
+//     {"key":2, "loc":"400 -250", "text":"Search Items"},
+//     {"key":3, "loc":"400 -150", "text":"View Item"},
+//     {"key":4, "loc":"400 -50", "text":"View Cart"},
+    
+//     {"key":5, "loc":"400 50", "text":"Update Cart"},
+//     {"key":6, "loc":"400 150", "text":"Checkout"},
+//     {"key":7, "loc":"400 250", "text":"Checkout"},
+
+//     {"key":8, "loc":"600 -200", "text":"Update Cart"},
+//     {"key":9, "loc":"600 -100", "text":"Checkout"},
+
+//     {"key":10, "loc":"600 100", "text":"Checkout"},
+//     {"key":11, "loc":"600 200", "text":"Checkout"},
+
+//     {"key":-2, "loc":"800 0", "category":"End"},
+
+
+//     {"key":-2, "loc":"1000 0", "category":"End"},
+
+//     // {"key":-2, "loc":"150 0", "category":"End"}
+// ]; 
+
 nodeDataArray = [
-    {"key":-1, "loc":"155 -138", "category":"Start"},
-    {"key":0, "loc":"190 15", "text":"Shopping"},
-    {"key":1, "loc":"353 32", "text":"Browse Items"},
-    {"key":2, "loc":"353 166", "text":"Search Items"},
-    {"key":3, "loc":"512 12", "text":"View Item"},
-    {"key":4, "loc":"661 17", "text":"View Cart"},
-    {"key":5, "loc":"644 171", "text":"Update Cart"},
-    {"key":6, "loc":"800 96", "text":"Checkout"},
-    {"key":-2, "loc":"757 229", "category":"End"}
+    {"key":0, "loc":"0 0", "category":"Start"},
+    
+    {"key":1, "loc":"200 -100", "text":"Shopping", "category":"Start"},
+    {"key":2, "loc":"200 100", "text":"Browse Items", "category":"Start"},
+
+    {"key":3, "loc":"400 -250", "text":"Search Items", "category":"Start"},
+    {"key":4, "loc":"400 -150", "text":"View Item", "category":"Start"},
+    {"key":5, "loc":"400 -50", "text":"View Cart", "category":"Start"},
+    
+    {"key":6, "loc":"400 50", "text":"Update Cart", "category":"Start"},
+    {"key":7, "loc":"400 150", "text":"Checkout", "category":"Start"},
+    {"key":8, "loc":"400 250", "text":"Checkout", "category":"Start"},
+
+    {"key":9, "loc":"600 -200", "text":"Update Cart", "category":"Start"},
+    {"key":10, "loc":"600 -100", "text":"Checkout", "category":"Start"},
+
+    {"key":11, "loc":"600 100", "text":"Checkout", "category":"Start"},
+    {"key":12, "loc":"600 200", "text":"Checkout", "category":"Start"},
+
+    {"key":13, "loc":"800 0", "category":"End"},
+
+
+    {"key":14, "loc":"1000 0", "category":"End"},
 ]; 
 
 linkDataArray = [
-    { "from": -1, "to": 0, "text": "Visit online store" },
-    { "from": 0, "to": 1,  "progress": "false", "text": "Browse" },
-    { "from": 0, "to": 2,  "progress": "true", "text": "Use search bar" },
-    { "from": 1, "to": 2,  "progress": "true", "text": "Use search bar" },
-    { "from": 2, "to": 3,  "progress": "true", "text": "Click item" },
-    { "from": 2, "to": 2,  "text": "Another search", "curviness": 20 },
-    { "from": 1, "to": 3,  "progress": "true", "text": "Click item" },
-    { "from": 3, "to": 0,  "text": "Not interested", "curviness": -100 },
-    { "from": 3, "to": 4,  "progress": "true", "text": "Add to cart" },
-    { "from": 4, "to": 0,  "text": "More shopping", "curviness": -150 },
-    { "from": 4, "to": 5,  "text": "Update needed", "curviness": -50 },
-    { "from": 5, "to": 4,  "text": "Update made" },
-    { "from": 4, "to": 6,  "progress": "true", "text": "Proceed" },
-    { "from": 6, "to": 5,  "text": "Update needed" },
-    { "from": 6, "to": -2, "progress": "true", "text": "Purchase made" }
+    { "from": 0, "to": 0, "text": "6" },
+    { "from": 0, "to": 1, "text": "1" },
+    { "from": 0, "to": 2, "text": "1" },
+
+    { "from": 1, "to": 1, "text": "Visit online store" },
+    { "from": 1, "to": 2, "text": "Visit online store" },
+    { "from": 1, "to": 3, "text": "Visit online store" },
+    { "from": 1, "to": 4, "text": "Visit online store" },
+    { "from": 1, "to": 5, "text": "Visit online store" },
+
+    { "from": 2, "to": 1, "text": "Visit online store" },
+    { "from": 2, "to": 2, "text": "Visit online store" },
+    { "from": 2, "to": 6, "text": "Visit online store" },
+    { "from": 2, "to": 7, "text": "Visit online store" },
+    { "from": 2, "to": 8, "text": "Visit online store" },
+
+
+
+    // { "from": 1, "to": 0, "text": "Reset" },
+    // { "from": 2, "to": 0, "text": "Reset" },
+    // { "from": 3, "to": 0, "text": "Reset" },
+    // { "from": 4, "to": 0, "text": "Reset" },
+    // { "from": 5, "to": 0, "text": "Reset" },
+    // { "from": 6, "to": 0, "text": "Reset" },
+    // { "from": 7, "to": 0, "text": "Reset" },
+    // { "from": 8, "to": 0, "text": "Reset" },
+    // { "from": 9, "to": 0, "text": "Reset" },
+    // { "from": 10, "to": 0, "text": "Reset" },
+    // { "from": 11, "to": 0, "text": "Reset" },
+    // { "from": 12, "to": 0, "text": "Reset" },
+    // { "from": 13, "to": 0, "text": "Reset" },
+    // { "from": 14, "to": 0, "text": "Reset" },
+    // { "from": 15, "to": 0, "text": "Reset" },
+
+
+    // { "from": 0, "to": 1, "text": "Visit online store" },
+    // { "from": 0, "to": 1, "text": "Visit online store" },
+    // { "from": 0, "to": 1, "text": "Visit online store" },
+    // { "from": 0, "to": 1, "text": "Visit online store" },
+    // { "from": 0, "to": 1, "text": "Visit online store" },
+    // { "from": 0, "to": 1, "text": "Visit online store" },
+    // { "from": 0, "to": 1,  "progress": "false", "text": "Browse" },
+    // { "from": 0, "to": 2,  "progress": "true", "text": "Use search bar" },
+    // { "from": 1, "to": 2,  "progress": "true", "text": "Use search bar" },
+    // { "from": 2, "to": 3,  "progress": "true", "text": "Click item" },
+    // { "from": 2, "to": 2,  "text": "Another search", "curviness": 20 },
+    // { "from": 1, "to": 3,  "progress": "true", "text": "Click item" },
+    // { "from": 3, "to": 0,  "text": "Not interested", "curviness": -100 },
+    // { "from": 3, "to": 4,  "progress": "true", "text": "Add to cart" },
+    // { "from": 4, "to": 0,  "text": "More shopping", "curviness": -150 },
+    // { "from": 4, "to": 5,  "text": "Update needed", "curviness": -50 },
+    // { "from": 5, "to": 4,  "text": "Update made" },
+    // { "from": 4, "to": 6,  "progress": "true", "text": "Proceed" },
+    // { "from": 6, "to": 5,  "text": "Update needed" },
+    // { "from": 6, "to": -2, "progress": "true", "text": "Purchase made" }
 ];
 
 var $ = go.GraphObject.make;  // for conciseness in defining templates
@@ -197,8 +309,9 @@ var roundedRectangleParams = {
         highlightNode(-1);
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-      myDiagram.model = new go.GraphLinksModel(nodeDataArray,linkDataArray);
-        highlightNode(-1);
+    myDiagram.model = new go.GraphLinksModel(nodeDataArray,linkDataArray);
+    myDiagram.model.isReadOnly = true;
+    highlightNode(-1);
     }
 
     function highlightNode(nodeId) {
@@ -209,6 +322,7 @@ var roundedRectangleParams = {
         // make sure the selected node is in the viewport
         myDiagram.scrollToRect(node.actualBounds);
         // move the large yellow node behind the selected node to highlight it
-        highlighter.location = node.location;;
+        highlighter.location = node.location;
+        // console.log(node.location)
       }
     }
