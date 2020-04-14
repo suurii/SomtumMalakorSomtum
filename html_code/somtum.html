@@ -51,19 +51,26 @@
                         <option value="kaikem">ไข่เค็ม</option>
                     </select><br>
                 </div>
-                <h1 class="name2">Add-on</h1>
-                <div class="cc-selector">
+                <h1 class="name3">Add-on</h1>
+                <div class="cc-selector2">
                     <input id="plara" type="checkbox" name="plara" value="plara" />
                     <label class="drinkcard-cc plara" for="plara"></label>
                 </div>
+                <div class="cf">
+                    <button class="button button--secondary">
+                        <span class="button__inner">Comfirm</span>
+                    </button>
+                    <div class="space"></div>
+                    <button class="button button--reset">
+                        <span class="button__reset">Reset</span>
+                    </button>
+                    <div class="space2"></div>
+                    <button class="button button--restart">
+                        <span class="button__restart">Restart</span>
+                    </button>
+                </div>
                 
-                <input id="cf" type="submit" name="cf" value="cf" />
-         
-
             </div>
-            <!-- <div class="input">
-                <h1>INPUT</h1>
-            </div> -->
         </div>
     </div>
     <script>
@@ -140,7 +147,18 @@
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
     </script>
-    
+    <!-- <script>
+        var $btn = document.querySelector('.btn');
+        $btn.addEventListener('click', e => {
+        window.requestAnimationFrame(() => {
+            $btn.classList.remove('is-animating');
+            
+            window.requestAnimationFrame(() => {
+            $btn.classList.add('is-animating');
+            });
+        });
+        });
+    </script> -->
 
     
 
