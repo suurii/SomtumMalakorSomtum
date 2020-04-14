@@ -94,13 +94,18 @@ body{
     background-color:greenyellow;
     text-align: center;
 }
+.ipst{
+    margin-left: 20px;
+    color:white;
+}
 
 .outputstring{
     width:100%;
-    height: 100px;
+    height: 130px;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
     border-radius: 0 0 0 20px;
+
 }
 h1{
     margin:0;
@@ -134,7 +139,7 @@ h2{
 }
 
 .name3{
-  margin-top: 38px;
+  margin-top: 39px;
   padding-left: 30px;
   font-family: 'TH SarabunPSK';
   font-style: normal;
@@ -144,6 +149,7 @@ h2{
 }
 
 /* <!-------------------------------------------------Dropdown--------------------------------------!> */
+
 .custom-select {
     position: relative;
     font-family: Arial;
@@ -168,6 +174,10 @@ h2{
     top: 0;
     width: 243.55px;
     margin:5px 10% 0px 11%;
+    background-image: url('image/pukem.svg');
+    background-repeat:no-repeat;
+    background-position:5px center;
+    padding-left: 40px;
     background-color: #000000;
     border: 3px solid #006A31;
     box-sizing: border-box;
@@ -176,7 +186,6 @@ h2{
   
   /* Style the arrow inside the select element: */
   .select-selected:after {
-    
     position: absolute;
     content: "";
     top: 20px;
@@ -196,7 +205,7 @@ h2{
   /* style the items (options), including the selected item: */
   .select-selected {
     color: #ffffff;
-    padding: 10px 16px;
+    padding: 11px 16px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
@@ -208,7 +217,7 @@ h2{
   }
   .select-items div{
     color: #ffffff;
-    padding: 8px 16px;
+    padding: 11px 16px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
@@ -237,9 +246,7 @@ h2{
 
 /* <!-------------------------------------------------Dropdown--------------------------------------!> */
 .cc-selector{
-  
   margin:8px 10px 0 10px;
-
   text-align: center;
 
 }
@@ -268,8 +275,8 @@ h2{
             filter: none;
 }
 
-.cc-selector2 input:active +.drinkcard-cc{opacity: .9;}
-.cc-selector2 input:checked +.drinkcard-cc{
+.cc-selector2 input:active +.drinkcard-cc2{opacity: .9;}
+.cc-selector2 input:checked +.drinkcard-cc2{
     -webkit-filter: none;
        -moz-filter: none;
             filter: none;
@@ -286,12 +293,28 @@ h2{
        -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
             filter: brightness(1.8) grayscale(1) opacity(.7);
 }
+.drinkcard-cc2{
+  cursor:pointer;
+  background-size:contain;
+  background-repeat:no-repeat;
+  display:inline-block;
+  -webkit-transition: all 100ms ease-in;
+     -moz-transition: all 100ms ease-in;
+          transition: all 100ms ease-in;
+  -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+     -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+          filter: brightness(1.8) grayscale(1) opacity(.7);
+}
 .drinkcard-cc:hover{
     -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
        -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
             filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
-
+.drinkcard-cc2:hover{
+  -webkit-filter: brightness(0.5) grayscale(.8) opacity(.9);
+     -moz-filter: brightness(0.5) grayscale(.8) opacity(.9);
+          filter: brightness(0.5) grayscale(.8) opacity(.9);
+}
   @import url(https://fonts.googleapis.com/css?family=Dosis);
   * {
     box-sizing: border-box;
@@ -355,7 +378,7 @@ h2{
     text-transform: uppercase;
     font-family: 'TH SarabunPSK';
     font-weight: bold;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     color: white;
     padding: 7px 73px;
     background-color: #fbfbfb;
@@ -379,12 +402,12 @@ h2{
     background-color: #fff;
  }
   .button--secondary {
-    background-color: #AE0000;
+    background-color: rgb(150, 5, 5);
     z-index: 0;
     border-radius: 10px;
  }
   .button--secondary:after {
-    background-color: #AE0000;
+    background-color: rgb(150, 5, 5);
     border-radius: 10px;
  }
   .button--secondary .button__inner {
@@ -409,9 +432,9 @@ h2{
   text-transform: uppercase;
   font-family: 'TH SarabunPSK';
   font-weight: bold;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   color: rgb(0, 0, 0);
-  padding: 7px 20px;
+  padding: 7px 27px;
   background-color: #fbfbfb;
   display: block;
   width: 100%;
@@ -455,9 +478,9 @@ h2{
   text-transform: uppercase;
   font-family: 'TH SarabunPSK';
   font-weight: bold;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   color: rgb(0, 0, 0);
-  padding: 7px 20px;
+  padding: 7px 14px;
   background-color: #fbfbfb;
   display: block;
   width: 100%;
