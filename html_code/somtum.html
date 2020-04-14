@@ -21,7 +21,7 @@
                 <img src="image/dfa.svg" class="dfaimg">
             </div>
             <div class="outputstring">
-                <h1>Outputstring</h1>
+                <h1 class="ipst">Inputstring</h1>
             </div>
         </div>
 
@@ -36,10 +36,10 @@
                 <h1 class="name2">รสชาติ</h1>
 
                 <div class="cc-selector">
-                    <input id="visa" type="radio" name="credit-card" value="visa" />
-                    <label class="drinkcard-cc visa" for="visa"></label>
-                    <input id="mastercard" type="radio" name="credit-card" value="mastercard" />
-                    <label class="drinkcard-cc mastercard"for="mastercard"></label>
+                    <input id="pednoi" type="radio" name="credit-card" value="pednoi" />
+                    <label class="drinkcard-cc visa" for="pednoi"></label>
+                    <input id="pedmak" type="radio" name="credit-card" value="pedmak" />
+                    <label class="drinkcard-cc mastercard"for="pedmak"></label>
                 </div>
 
                 <h1 class="name2">ส่วนผสม</h1>
@@ -54,7 +54,7 @@
                 <h1 class="name3">Add-on</h1>
                 <div class="cc-selector2">
                     <input id="plara" type="checkbox" name="plara" value="plara" />
-                    <label class="drinkcard-cc plara" for="plara"></label>
+                    <label class="drinkcard-cc2 plara" for="plara"></label>
                 </div>
                 <div class="cf">
                     <button class="button button--secondary">
@@ -74,6 +74,7 @@
         </div>
     </div>
     <script>
+        /*<---------------------------------------------------- for dropdown -----------------------------------------------*/
         var x, i, j, selElmnt, a, b, c;
         /*look for any elements with the class "custom-select":*/
         x = document.getElementsByClassName("custom-select");
@@ -146,19 +147,8 @@
         /*if the user clicks anywhere outside the select box,
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
+        /*<---------------------------------------------------- for dropdown -----------------------------------------------*/
     </script>
-    <!-- <script>
-        var $btn = document.querySelector('.btn');
-        $btn.addEventListener('click', e => {
-        window.requestAnimationFrame(() => {
-            $btn.classList.remove('is-animating');
-            
-            window.requestAnimationFrame(() => {
-            $btn.classList.add('is-animating');
-            });
-        });
-        });
-    </script> -->
 
     
 
