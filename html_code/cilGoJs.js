@@ -101,6 +101,80 @@ linkDataArray = [
     { "from": 2, "to": 7, "text": "Visit online store" },
     { "from": 2, "to": 8, "text": "Visit online store" },
 
+    
+    //layer 2 up
+    { "from": 3, "to": 3, "text": "Visit online store" },
+    { "from": 3, "to": 4, "text": "Visit online store" },
+    { "from": 3, "to": 5, "text": "Visit online store" },
+    { "from": 3, "to": 6, "text": "Visit online store" },
+    { "from": 3, "to": 9, "text": "Visit online store" },
+
+    { "from": 4, "to": 3, "text": "Visit online store" },
+    { "from": 4, "to": 4, "text": "Visit online store" },
+    { "from": 4, "to": 5, "text": "Visit online store" },
+    { "from": 4, "to": 8, "text": "Visit online store" },
+    { "from": 4, "to": 10, "text": "Visit online store" },
+
+    { "from": 5, "to": 3, "text": "Visit online store" },
+    { "from": 5, "to": 4, "text": "Visit online store" },
+    { "from": 5, "to": 5, "text": "Visit online store" },
+    { "from": 5, "to": 8, "text": "Visit online store" },
+
+    //layer 2 down
+    { "from": 6, "to": 3, "text": "Visit online store" },
+    { "from": 6, "to": 6, "text": "Visit online store" },
+    { "from": 6, "to": 7, "text": "Visit online store" },
+    { "from": 6, "to": 8, "text": "Visit online store" },
+    { "from": 6, "to": 11, "text": "Visit online store" },
+
+    { "from": 7, "to": 4, "text": "Visit online store" },
+    { "from": 7, "to": 6, "text": "Visit online store" },
+    { "from": 7, "to": 7, "text": "Visit online store" },
+    { "from": 7, "to": 8, "text": "Visit online store" },
+    { "from": 7, "to": 12, "text": "Visit online store" },
+
+    { "from": 8, "to": 5, "text": "Visit online store" },
+    { "from": 8, "to": 6, "text": "Visit online store" },
+    { "from": 8, "to": 7, "text": "Visit online store" },
+    { "from": 8, "to": 8, "text": "Visit online store" },
+
+
+    //layer 3 
+    { "from": 9, "to": 9, "text": "Visit online store" },
+    { "from": 9, "to": 10, "text": "Visit online store" },
+    { "from": 9, "to": 11, "text": "Visit online store" },
+
+    { "from": 10, "to": 9, "text": "Visit online store" },
+    { "from": 10, "to": 10, "text": "Visit online store" },
+    { "from": 10, "to": 12, "text": "Visit online store" },
+
+    { "from": 11, "to": 9, "text": "Visit online store" },
+    { "from": 11, "to": 11, "text": "Visit online store" },
+    { "from": 11, "to": 12, "text": "Visit online store" },
+    // { "from": 11, "to": 13, "text": "Visit online store" },
+
+    { "from": 12, "to": 10, "text": "Visit online store" },
+    { "from": 12, "to": 11, "text": "Visit online store" },
+    { "from": 12, "to": 12, "text": "Visit online store" },
+    // { "from": 12, "to": 13, "text": "Visit online store" },
+
+    { "from": 13, "to": 13, "text": "Visit online store" },
+    { "from": 13, "to": 14, "text": "Visit online store" },
+
+    { "from": 14, "to": 14, "text": "Visit\nonline\nstore" },
+
+
+
+    
+    // { "from": 1, "to": 13, "text": "Confirm" },
+    // { "from": 2, "to": 13, "text": "Confirm" },
+    // { "from": 5, "to": 13, "text": "Confirm" },
+    // { "from": 8, "to": 13, "text": "Confirm" },
+    // { "from": 9, "to": 13, "text": "Confirm" },
+    // { "from": 10, "to": 13, "text": "Confirm" },
+    // { "from": 11, "to": 13, "text": "Confirm" },
+    // { "from": 12, "to": 13, "text": "Confirm" },
+
 
 
     // { "from": 1, "to": 0, "text": "Reset" },
@@ -115,9 +189,6 @@ linkDataArray = [
     // { "from": 10, "to": 0, "text": "Reset" },
     // { "from": 11, "to": 0, "text": "Reset" },
     // { "from": 12, "to": 0, "text": "Reset" },
-    // { "from": 13, "to": 0, "text": "Reset" },
-    // { "from": 14, "to": 0, "text": "Reset" },
-    // { "from": 15, "to": 0, "text": "Reset" },
 
 
     // { "from": 0, "to": 1, "text": "Visit online store" },
