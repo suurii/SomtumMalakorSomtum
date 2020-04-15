@@ -59,31 +59,31 @@ var now = 0;
 // ]; 
 
 nodeDataArray = [
-    {"key":-1, "loc":"-75 25"},
+    {"key":-1},
   
-    {"key":0, "loc":"0 0","text":"Start\nstate","category":"Start"},
+    {"key":0,"text":"Start\nstate","category":"Start"},
     
-    {"key":1, "loc":"200 -100", "text":"เผ็ดน้อย", "category":"Start"},
-    {"key":2, "loc":"200 100", "text":"เผ็ดมาก", "category":"Start"},
+    {"key":1, "text":"เผ็ดน้อย", "category":"Start"},
+    {"key":2, "text":"เผ็ดมาก", "category":"Start"},
 
-    {"key":3, "loc":"400 -250", "text":"ปูเค็ม\nเผ็ดน้อย", "category":"Start"},
-    {"key":4, "loc":"400 -150", "text":"หมูยอ\nเผ็ดน้อย", "category":"Start"},
-    {"key":5, "loc":"400 -50", "text":"ไข่เค็ม\nเผ็ดน้อย", "category":"Start"},
+    {"key":3, "text":"ปูเค็ม\nเผ็ดน้อย", "category":"Start"},
+    {"key":4, "text":"หมูยอ\nเผ็ดน้อย", "category":"Start"},
+    {"key":5, "text":"ไข่เค็ม\nเผ็ดน้อย", "category":"Start"},
     
-    {"key":6, "loc":"400 50", "text":"ปูเค็ม\nเผ็ดมาก", "category":"Start"},
-    {"key":7, "loc":"400 150", "text":"หมูยอ\nเผ็ดมาก", "category":"Start"},
-    {"key":8, "loc":"400 250", "text":"ไข่เค็ม\nเผ็ดมาก", "category":"Start"},
+    {"key":6, "text":"ปูเค็ม\nเผ็ดมาก", "category":"Start"},
+    {"key":7, "text":"หมูยอ\nเผ็ดมาก", "category":"Start"},
+    {"key":8, "text":"ไข่เค็ม\nเผ็ดมาก", "category":"Start"},
 
-    {"key":9, "loc":"600 -200", "text":"ตำปู\nปลาร้า\nเผ็ดน้อย", "category":"Start"},
-    {"key":10, "loc":"600 -100", "text":"ตำหมูยอ\nปลาร้า\nเผ็ดน้อย", "category":"Start"},
+    {"key":9, "text":"ตำปู\nปลาร้า\nเผ็ดน้อย", "category":"Start"},
+    {"key":10, "text":"ตำหมูยอ\nปลาร้า\nเผ็ดน้อย", "category":"Start"},
 
-    {"key":11, "loc":"600 100", "text":"ตำปู\nปลาร้า\nเผ็ดมาก", "category":"Start"},
-    {"key":12, "loc":"600 200", "text":"ตำหมูยอ\nปลาร้า\nเผ็ดมาก", "category":"Start"},
+    {"key":11, "text":"ตำปู\nปลาร้า\nเผ็ดมาก", "category":"Start"},
+    {"key":12, "text":"ตำหมูยอ\nปลาร้า\nเผ็ดมาก", "category":"Start"},
 
-    {"key":13, "loc":"800 0", "text":"Confirm", "category":"End"},
+    {"key":13, "text":"Confirm", "category":"End"},
 
 
-    {"key":14, "loc":"1000 0", "text":"Trap\nstate", "category":"Start"},
+    {"key":14, "text":"Trap\nstate", "category":"Start"},
 ]; 
 
 linkDataArray = [
@@ -104,59 +104,59 @@ linkDataArray = [
     { "from": 2, "to": 8, "text": "ไข่เค็ม" ,"segmentIndex":3 ,"segmentFraction":0.4 },
 
     
-    // //layer 2 up
-    // { "from": 3, "to": 3, "text": "Visit online store" },
-    // { "from": 3, "to": 4, "text": "Visit online store" },
-    // { "from": 3, "to": 5, "text": "Visit online store" },
-    // { "from": 3, "to": 6, "text": "Visit online store" },
-    // { "from": 3, "to": 9, "text": "Visit online store" },
+    //layer 2 up
+    { "from": 3, "to": 3, "text": "Visit online store" },
+    { "from": 3, "to": 4, "text": "Visit online store" },
+    { "from": 3, "to": 5, "text": "Visit online store" },
+    { "from": 3, "to": 6, "text": "Visit online store" },
+    { "from": 3, "to": 9, "text": "Visit online store" },
 
-    // { "from": 4, "to": 3, "text": "Visit online store" },
-    // { "from": 4, "to": 4, "text": "Visit online store" },
-    // { "from": 4, "to": 5, "text": "Visit online store" },
-    // { "from": 4, "to": 8, "text": "Visit online store" },
-    // { "from": 4, "to": 10, "text": "Visit online store" },
+    { "from": 4, "to": 3, "text": "Visit online store" },
+    { "from": 4, "to": 4, "text": "Visit online store" },
+    { "from": 4, "to": 5, "text": "Visit online store" },
+    { "from": 4, "to": 8, "text": "Visit online store" },
+    { "from": 4, "to": 10, "text": "Visit online store" },
 
-    // { "from": 5, "to": 3, "text": "Visit online store" },
-    // { "from": 5, "to": 4, "text": "Visit online store" },
-    // { "from": 5, "to": 5, "text": "Visit online store" },
-    // { "from": 5, "to": 8, "text": "Visit online store" },
+    { "from": 5, "to": 3, "text": "Visit online store" },
+    { "from": 5, "to": 4, "text": "Visit online store" },
+    { "from": 5, "to": 5, "text": "Visit online store" },
+    { "from": 5, "to": 8, "text": "Visit online store" },
 
-    // //layer 2 down
-    // { "from": 6, "to": 3, "text": "Visit online store" },
-    // { "from": 6, "to": 6, "text": "Visit online store" },
-    // { "from": 6, "to": 7, "text": "Visit online store" },
-    // { "from": 6, "to": 8, "text": "Visit online store" },
-    // { "from": 6, "to": 11, "text": "Visit online store" },
+    //layer 2 down
+    { "from": 6, "to": 3, "text": "Visit online store" },
+    { "from": 6, "to": 6, "text": "Visit online store" },
+    { "from": 6, "to": 7, "text": "Visit online store" },
+    { "from": 6, "to": 8, "text": "Visit online store" },
+    { "from": 6, "to": 11, "text": "Visit online store" },
 
-    // { "from": 7, "to": 4, "text": "Visit online store" },
-    // { "from": 7, "to": 6, "text": "Visit online store" },
-    // { "from": 7, "to": 7, "text": "Visit online store" },
-    // { "from": 7, "to": 8, "text": "Visit online store" },
-    // { "from": 7, "to": 12, "text": "Visit online store" },
+    { "from": 7, "to": 4, "text": "Visit online store" },
+    { "from": 7, "to": 6, "text": "Visit online store" },
+    { "from": 7, "to": 7, "text": "Visit online store" },
+    { "from": 7, "to": 8, "text": "Visit online store" },
+    { "from": 7, "to": 12, "text": "Visit online store" },
 
-    // { "from": 8, "to": 5, "text": "Visit online store" },
-    // { "from": 8, "to": 6, "text": "Visit online store" },
-    // { "from": 8, "to": 7, "text": "Visit online store" },
-    // { "from": 8, "to": 8, "text": "Visit online store" },
+    { "from": 8, "to": 5, "text": "Visit online store" },
+    { "from": 8, "to": 6, "text": "Visit online store" },
+    { "from": 8, "to": 7, "text": "Visit online store" },
+    { "from": 8, "to": 8, "text": "Visit online store" },
 
 
-    // //layer 3 
-    // { "from": 9, "to": 9, "text": "Visit online store" },
-    // { "from": 9, "to": 10, "text": "Visit online store" },
-    // { "from": 9, "to": 11, "text": "Visit online store" },
+    //layer 3 
+    { "from": 9, "to": 9, "text": "Visit online store" },
+    { "from": 9, "to": 10, "text": "Visit online store" },
+    { "from": 9, "to": 11, "text": "Visit online store" },
 
-    // { "from": 10, "to": 9, "text": "Visit online store" },
-    // { "from": 10, "to": 10, "text": "Visit online store" },
-    // { "from": 10, "to": 12, "text": "Visit online store" },
+    { "from": 10, "to": 9, "text": "Visit online store" },
+    { "from": 10, "to": 10, "text": "Visit online store" },
+    { "from": 10, "to": 12, "text": "Visit online store" },
 
-    // { "from": 11, "to": 9, "text": "Visit online store" },
-    // { "from": 11, "to": 11, "text": "Visit online store" },
-    // { "from": 11, "to": 12, "text": "Visit online store" },
+    { "from": 11, "to": 9, "text": "Visit online store" },
+    { "from": 11, "to": 11, "text": "Visit online store" },
+    { "from": 11, "to": 12, "text": "Visit online store" },
 
-    // { "from": 12, "to": 10, "text": "Visit online store" },
-    // { "from": 12, "to": 11, "text": "Visit online store" },
-    // { "from": 12, "to": 12, "text": "Visit online store" },
+    { "from": 12, "to": 10, "text": "Visit online store" },
+    { "from": 12, "to": 11, "text": "Visit online store" },
+    { "from": 12, "to": 12, "text": "Visit online store" },
 
     { "from": 13, "to": 13, "text": "Confirm" , "points":[880,40 ,880,80 ,840,80 ] ,"segmentFraction": 1  ,"segmentIndex": 0},
     { "from": 13, "to": 14,"segmentFraction": 0.5  ,"segmentIndex": 2, "text": "เผ็ดน้อย,\nเผ็ดมาก,\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset" },
@@ -232,77 +232,77 @@ var roundedRectangleParams = {
           });
 
       // define the Node template
-      myDiagram.nodeTemplate =
-        $(go.Node, "Auto",
-          {
-            // locationSpot: go.Spot.TopCenter,
-            isShadowed: true, shadowBlur: 1,
-            shadowOffset: new go.Point(0, 1),
-            shadowColor: "rgba(0, 0, 0, .14)"
-          },
-          new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
-          // define the node's outer shape, which will surround the TextBlock
-          $(go.Shape, "RoundedRectangle", roundedRectangleParams,
-            {
-              name: "SHAPE", fill: null, strokeWidth: 0,
-              stroke: null,
-              portId: "",  // this Shape is the Node's port, not the whole Node
-              fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
-              toLinkable: true, toLinkableSelfNode: true, toLinkableDuplicates: true,
-              cursor: "pointer"
-            }),
-          $(go.TextBlock,
-            {
-              font: "bold small-caps 11pt helvetica, bold arial, sans-serif", margin: 7, stroke: "rgba(0, 0, 0, .87)",
-            },
-            new go.Binding("text").makeTwoWay())
-        );
+      // myDiagram.nodeTemplate =
+      //   $(go.Node, "Auto",
+      //     {
+      //       // locationSpot: go.Spot.TopCenter,
+      //       isShadowed: true, shadowBlur: 1,
+      //       shadowOffset: new go.Point(0, 1),
+      //       shadowColor: "rgba(0, 0, 0, .14)"
+      //     },
+      //     new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
+      //     // define the node's outer shape, which will surround the TextBlock
+      //     $(go.Shape, "RoundedRectangle", roundedRectangleParams,
+      //       {
+      //         name: "SHAPE", fill: null, strokeWidth: 0,
+      //         stroke: null,
+      //         portId: "",  // this Shape is the Node's port, not the whole Node
+      //         fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
+      //         toLinkable: true, toLinkableSelfNode: true, toLinkableDuplicates: true,
+      //         cursor: "pointer"
+      //       }),
+      //     $(go.TextBlock,
+      //       {
+      //         font: "bold small-caps 11pt helvetica, bold arial, sans-serif", margin: 7, stroke: "rgba(0, 0, 0, .87)",
+      //       },
+      //       new go.Binding("text").makeTwoWay())
+      //   );
 
-      myDiagram.nodeTemplateMap.add("Start",
-        $(go.Node, "Spot", { desiredSize: new go.Size(80, 80) },
-          new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
-          $(go.Shape, "Circle",
-            {
-              fill: "#52ce60", /* green */
-              stroke: null,
-              portId: "",
-              fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
-              toLinkable: true, toLinkableSelfNode: true, toLinkableDuplicates: true,
-              // cursor: "pointer"
-            }),
-          $(go.TextBlock, "Start",
-            {
-              font: "bold 18pt TH SarabunPSK, bold arial, sans-serif",
-              textAlign: "center",
-              stroke: "whitesmoke"
-            },
-            new go.Binding("text").makeTwoWay()
-            )
+      // myDiagram.nodeTemplateMap.add("Start",
+      //   $(go.Node, "Spot", { desiredSize: new go.Size(80, 80) },
+      //     new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
+      //     $(go.Shape, "Circle",
+      //       {
+      //         fill: "#52ce60", /* green */
+      //         stroke: null,
+      //         portId: "",
+      //         fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
+      //         toLinkable: true, toLinkableSelfNode: true, toLinkableDuplicates: true,
+      //         // cursor: "pointer"
+      //       }),
+      //     $(go.TextBlock, "Start",
+      //       {
+      //         font: "bold 18pt TH SarabunPSK, bold arial, sans-serif",
+      //         textAlign: "center",
+      //         stroke: "whitesmoke"
+      //       },
+      //       new go.Binding("text").makeTwoWay()
+      //       )
 
-        )
-      );
+      //   )
+      // );
 
-      myDiagram.nodeTemplateMap.add("End",
-        $(go.Node, "Spot", { desiredSize: new go.Size(80, 80) },
-          new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
-          $(go.Shape, "Circle",
-            {
-              fill: "maroon",
-              stroke: null,
-              portId: "",
-              fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
-              toLinkable: true, toLinkableSelfNode: true, toLinkableDuplicates: true,
-              cursor: "pointer"
-            }),
-          $(go.Shape, "Circle", { fill: null, desiredSize: new go.Size(70, 70), strokeWidth: 2, stroke: "whitesmoke" }),
-          $(go.TextBlock, "Confirm",
-            {
-              font: "bold 18pt TH SarabunPSK, bold arial, sans-serif",
-              stroke: "whitesmoke"
-            },
-            new go.Binding("text").makeTwoWay())
-        )
-      );
+      // myDiagram.nodeTemplateMap.add("End",
+      //   $(go.Node, "Spot", { desiredSize: new go.Size(80, 80) },
+      //     new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
+      //     $(go.Shape, "Circle",
+      //       {
+      //         fill: "maroon",
+      //         stroke: null,
+      //         portId: "",
+      //         fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
+      //         toLinkable: true, toLinkableSelfNode: true, toLinkableDuplicates: true,
+      //         cursor: "pointer"
+      //       }),
+      //     $(go.Shape, "Circle", { fill: null, desiredSize: new go.Size(70, 70), strokeWidth: 2, stroke: "whitesmoke" }),
+      //     $(go.TextBlock, "Confirm",
+      //       {
+      //         font: "bold 18pt TH SarabunPSK, bold arial, sans-serif",
+      //         stroke: "whitesmoke"
+      //       },
+      //       new go.Binding("text").makeTwoWay())
+      //   )
+      // );
 
       // // replace the default Link template in the linkTemplateMap
       // myDiagram.linkTemplate =
@@ -350,42 +350,42 @@ var roundedRectangleParams = {
           // )
       //   );
 
-      myDiagram.linkTemplate =
-      $(go.Link,  // the whole link panel
-        { relinkableFrom: true, relinkableTo: true, reshapable: true, resegmentable: true },
-        {
-          routing: go.Link.AvoidsNodes,  // but this is changed to go.Link.Orthgonal when the Link is reshaped
-          adjusting: go.Link.End,
-          curve: go.Link.JumpOver,
-          corner: 5,
-          // toShortLength: 4
-        },
-        new go.Binding("points").makeTwoWay(),
-        new go.Binding("curve").makeTwoWay(),
-        // remember the Link.routing too
-        new go.Binding("routing", "routing", go.Binding.parseEnum(go.Link, go.Link.AvoidsNodes))
-          .makeTwoWay(go.Binding.toString),
-        $(go.Shape,  // the link path shape
-          { isPanelMain: true, strokeWidth: 1 }),
-        $(go.Shape,  // the arrowhead
-          { toArrow: "Standard", stroke: null }),
-        $(go.TextBlock, "transition",  // the label text
-          {
-            textAlign: "center",
-            font: "9pt helvetica, arial, sans-serif",
-            margin: 4,
-            segmentIndex: 0,
-            segmentFraction: 0.2 
-          },
-          // editing the text automatically updates the model data
-          new go.Binding("text").makeTwoWay(),
-          new go.Binding("segmentIndex").makeTwoWay(),
-          new go.Binding("segmentFraction").makeTwoWay(),
+      // myDiagram.linkTemplate =
+      // $(go.Link,  // the whole link panel
+      //   { relinkableFrom: true, relinkableTo: true, reshapable: true, resegmentable: true },
+      //   {
+      //     routing: go.Link.AvoidsNodes,  // but this is changed to go.Link.Orthgonal when the Link is reshaped
+      //     adjusting: go.Link.End,
+      //     curve: go.Link.JumpOver,
+      //     corner: 5,
+      //     // toShortLength: 4
+      //   },
+      //   new go.Binding("points").makeTwoWay(),
+      //   new go.Binding("curve").makeTwoWay(),
+      //   // remember the Link.routing too
+      //   new go.Binding("routing", "routing", go.Binding.parseEnum(go.Link, go.Link.AvoidsNodes))
+      //     .makeTwoWay(go.Binding.toString),
+      //   $(go.Shape,  // the link path shape
+      //     { isPanelMain: true, strokeWidth: 1 }),
+      //   $(go.Shape,  // the arrowhead
+      //     { toArrow: "Standard", stroke: null }),
+      //   $(go.TextBlock, "transition",  // the label text
+      //     {
+      //       textAlign: "center",
+      //       font: "9pt helvetica, arial, sans-serif",
+      //       margin: 4,
+      //       segmentIndex: 0,
+      //       segmentFraction: 0.2 
+      //     },
+      //     // editing the text automatically updates the model data
+      //     new go.Binding("text").makeTwoWay(),
+      //     new go.Binding("segmentIndex").makeTwoWay(),
+      //     new go.Binding("segmentFraction").makeTwoWay(),
           
           
-          ),
+      //     ),
       
-      );
+      // );
 
       ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Create a part in the background of the full diagram to highlight the selected node
@@ -399,9 +399,9 @@ var roundedRectangleParams = {
             },
             $(go.Shape, "Ellipse",
               {
-                fill: $(go.Brush, "Radial", { 0.5: "yellow", 1.0: "rgba(0, 0, 0, 0)"}),
+                fill: $(go.Brush, "Radial", { 0.0: "yellow", 1.0: "white" }),
                 stroke: null,
-                desiredSize: new go.Size(150, 150)
+                desiredSize: new go.Size(100, 100)
               })
           );
         myDiagram.add(highlighter);
@@ -421,10 +421,7 @@ var roundedRectangleParams = {
         // make sure the selected node is in the viewport
         myDiagram.scrollToRect(node.actualBounds);
         // move the large yellow node behind the selected node to highlight it
-        highlighter.location = new go.Point(node.location.x+40,node.location.y+40);
-        
+        highlighter.location = node.location;
         // console.log(node.location)
-        // console.log(highlighter.location)
-        
       }
     }
