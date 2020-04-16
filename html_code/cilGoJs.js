@@ -1,70 +1,11 @@
 var now = 0;
-
-// nodeDataArray = [
-//     {"key":-1, "loc":"155 -138", "category":"Start"},
-//     {"key":0, "loc":"190 15", "text":"Shopping"},
-//     {"key":1, "loc":"353 32", "text":"Browse Items"},
-//     {"key":2, "loc":"353 166", "text":"Search Items"},
-//     {"key":3, "loc":"512 12", "text":"View Item"},
-//     {"key":4, "loc":"661 17", "text":"View Cart"},
-//     {"key":5, "loc":"644 171", "text":"Update Cart"},
-//     {"key":6, "loc":"800 96", "text":"Checkout"},
-//     {"key":-2, "loc":"757 229", "category":"End"}
-// ]; 
-
-// linkDataArray = [
-//     { "from": -1, "to": 0, "text": "Visit online store" },
-//     { "from": 0, "to": 1,  "progress": "false", "text": "Browse" },
-//     { "from": 0, "to": 2,  "progress": "true", "text": "Use search bar" },
-//     { "from": 1, "to": 2,  "progress": "true", "text": "Use search bar" },
-//     { "from": 2, "to": 3,  "progress": "true", "text": "Click item" },
-//     { "from": 2, "to": 2,  "text": "Another search", "curviness": 20 },
-//     { "from": 1, "to": 3,  "progress": "true", "text": "Click item" },
-//     { "from": 3, "to": 0,  "text": "Not interested", "curviness": -100 },
-//     { "from": 3, "to": 4,  "progress": "true", "text": "Add to cart" },
-//     { "from": 4, "to": 0,  "text": "More shopping", "curviness": -150 },
-//     { "from": 4, "to": 5,  "text": "Update needed", "curviness": -50 },
-//     { "from": 5, "to": 4,  "text": "Update made" },
-//     { "from": 4, "to": 6,  "progress": "true", "text": "Proceed" },
-//     { "from": 6, "to": 5,  "text": "Update needed" },
-//     { "from": 6, "to": -2, "progress": "true", "text": "Purchase made" }
-// ];
-////////////////////////////////////////////////////////////////////////////////////
-// nodeDataArray = [
-//     {"key":-1, "loc":"0 0", "category":"Start"},
-    
-//     {"key":0, "loc":"200 -100", "text":"Shopping"},
-//     {"key":1, "loc":"200 100", "text":"Browse Items"},
-
-//     {"key":2, "loc":"400 -250", "text":"Search Items"},
-//     {"key":3, "loc":"400 -150", "text":"View Item"},
-//     {"key":4, "loc":"400 -50", "text":"View Cart"},
-    
-//     {"key":5, "loc":"400 50", "text":"Update Cart"},
-//     {"key":6, "loc":"400 150", "text":"Checkout"},
-//     {"key":7, "loc":"400 250", "text":"Checkout"},
-
-//     {"key":8, "loc":"600 -200", "text":"Update Cart"},
-//     {"key":9, "loc":"600 -100", "text":"Checkout"},
-
-//     {"key":10, "loc":"600 100", "text":"Checkout"},
-//     {"key":11, "loc":"600 200", "text":"Checkout"},
-
-//     {"key":-2, "loc":"800 0", "category":"End"},
-
-
-//     {"key":-2, "loc":"1000 0", "category":"End"},
-
-//     // {"key":-2, "loc":"150 0", "category":"End"}
-// ]; 
-
 nodeDataArray = [
     {"key":-1, "loc":"-75 25"},
   
     {"key":0, "loc":"0 0","text":"Start\nstate","category":"Start"},
     
-    {"key":1, "loc":"200 -100", "text":"เผ็ดน้อย", "category":"Start"},
-    {"key":2, "loc":"200 100", "text":"เผ็ดมาก", "category":"Start"},
+    {"key":1, "loc":"200 -100", "text":"ตำไทย\nเผ็ดน้อย", "category":"Start"},
+    {"key":2, "loc":"200 100", "text":"ตำไทย\nเผ็ดมาก", "category":"Start"},
 
     {"key":3, "loc":"400 -250", "text":"ปูเค็ม\nเผ็ดน้อย", "category":"Start"},
     {"key":4, "loc":"400 -150", "text":"หมูยอ\nเผ็ดน้อย", "category":"Start"},
@@ -103,42 +44,43 @@ linkDataArray = [
     { "from": 2, "to": 7, "text": "หมูยอ" ,"segmentIndex":3 ,"segmentFraction":0.4 },
     { "from": 2, "to": 8, "text": "ไข่เค็ม" ,"segmentIndex":3 ,"segmentFraction":0.4 },
 
-    
-    // //layer 2 up
-    // { "from": 3, "to": 3, "text": "Visit online store" },
-    // { "from": 3, "to": 4, "text": "Visit online store" },
-    // { "from": 3, "to": 5, "text": "Visit online store" },
-    // { "from": 3, "to": 6, "text": "Visit online store" },
-    // { "from": 3, "to": 9, "text": "Visit online store" },
 
-    // { "from": 4, "to": 3, "text": "Visit online store" },
-    // { "from": 4, "to": 4, "text": "Visit online store" },
-    // { "from": 4, "to": 5, "text": "Visit online store" },
-    // { "from": 4, "to": 8, "text": "Visit online store" },
-    // { "from": 4, "to": 10, "text": "Visit online store" },
 
-    // { "from": 5, "to": 3, "text": "Visit online store" },
-    // { "from": 5, "to": 4, "text": "Visit online store" },
-    // { "from": 5, "to": 5, "text": "Visit online store" },
-    // { "from": 5, "to": 8, "text": "Visit online store" },
+    //layer 2 up
+    { "from": 3, "to": 3, "points":[406,-230 ,370,-230 ,370,-250 ,440,-250],"segmentIndex":1 ,"segmentFraction":0.5  , "text": "ปูเค็ม,เผ็ดน้อย" },
+    { "from": 3, "to": 4, "text": "หมูยอ" , "points":[410,-185 ,410,-135],"segmentIndex":0 ,"segmentFraction":0.3  },
+    // { "from": 3, "to": 5, "text": "ไข่เค็ม" },
+    // { "from": 3, "to": 6, "text": "เผ็ดมาก" },
+    // { "from": 3, "to": 9, "text": "ปลาร้า" },
+
+    // { "from": 4, "to": 3, "text": "ปูเค็ม" },
+    { "from": 4, "to": 4, "points":[406,-130 ,370,-130 ,370,-150 ,440,-150],"segmentIndex":1 ,"segmentFraction":1  , "text": "หมูยอ,\nเผ็ดน้อย" },
+    { "from": 4, "to": 5, "text": "ไข่เค็ม" , "points":[410,-85 ,410,-35],"segmentIndex":0 ,"segmentFraction":0.3 },
+    // { "from": 4, "to": 7, "text": "เผ็ดมาก" },
+    // { "from": 4, "to": 10, "text": "ปลาร้า" },
+
+    // { "from": 5, "to": 3, "text": "ปูเค็ม" },
+    // { "from": 5, "to": 4, "text": "หมูยอ" },
+    { "from": 5, "to": 5, "points":[406,-30 ,370,-30 ,370,-50 ,440,-50],"segmentIndex":1 ,"segmentFraction":1  , "text": "ไข่เค็ม,\nเผ็ดน้อย,\nปลาร้า" },
+    // { "from": 5, "to": 8, "text": "เผ็ดมาก" },
 
     // //layer 2 down
-    // { "from": 6, "to": 3, "text": "Visit online store" },
-    // { "from": 6, "to": 6, "text": "Visit online store" },
-    // { "from": 6, "to": 7, "text": "Visit online store" },
-    // { "from": 6, "to": 8, "text": "Visit online store" },
-    // { "from": 6, "to": 11, "text": "Visit online store" },
+    // { "from": 6, "to": 3, "text": "เผ็ดน้อย" },
+    { "from": 6, "to": 6, "points":[406,70 ,370,70 ,370,50 ,440,50],"segmentIndex":1 ,"segmentFraction":0.5  , "text": "ปูเค็ม,เผ็ดมาก" },
+    { "from": 6, "to": 7, "text": "หมูยอ" , "points":[410,115 ,410,165],"segmentIndex":0 ,"segmentFraction":0.3 },
+    // { "from": 6, "to": 8, "text": "ไข่เค็ม" },
+    // { "from": 6, "to": 11, "text": "ปลาร้า" },
 
-    // { "from": 7, "to": 4, "text": "Visit online store" },
-    // { "from": 7, "to": 6, "text": "Visit online store" },
-    // { "from": 7, "to": 7, "text": "Visit online store" },
-    // { "from": 7, "to": 8, "text": "Visit online store" },
-    // { "from": 7, "to": 12, "text": "Visit online store" },
+    // { "from": 7, "to": 4, "text": "เผ็ดน้อย" },
+    // { "from": 7, "to": 6, "text": "ปูเค็ม" },
+    { "from": 7, "to": 7, "points":[406,170 ,370,170 ,370,150 ,440,150],"segmentIndex":1 ,"segmentFraction":1  , "text": "หมูยอ,\nเผ็ดมาก" },
+    { "from": 7, "to": 8, "text": "ไข่เค็ม" , "points":[410,215 ,410,265],"segmentIndex":0 ,"segmentFraction":0.3 },
+    // { "from": 7, "to": 12, "text": "ปลาร้า" },
 
-    // { "from": 8, "to": 5, "text": "Visit online store" },
-    // { "from": 8, "to": 6, "text": "Visit online store" },
-    // { "from": 8, "to": 7, "text": "Visit online store" },
-    // { "from": 8, "to": 8, "text": "Visit online store" },
+    // { "from": 8, "to": 5, "text": "เผ็ดน้อย" },
+    // { "from": 8, "to": 6, "text": "ปูเค็ม" },
+    // { "from": 8, "to": 7, "text": "หมูยอ" },
+    { "from": 8, "to": 8, "points":[406,270 ,370,270 ,370,250 ,440,250],"segmentIndex":1 ,"segmentFraction":1  , "text": "ไข่เค็ม,\nเผ็ดมาก" },
 
 
     // //layer 3 
@@ -159,9 +101,9 @@ linkDataArray = [
     // { "from": 12, "to": 12, "text": "Visit online store" },
 
     { "from": 13, "to": 13, "text": "Confirm" , "points":[880,40 ,880,80 ,840,80 ] ,"segmentFraction": 1  ,"segmentIndex": 0},
-    { "from": 13, "to": 14,"segmentFraction": 0.5  ,"segmentIndex": 2, "text": "เผ็ดน้อย,\nเผ็ดมาก,\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset" },
+    { "from": 13, "to": 14,"segmentFraction": 0.5  ,"segmentIndex": 2, "text": "\n\n\n\n\n\n\n\nเผ็ดน้อย,\nเผ็ดมาก,\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset" },
 
-    { "from": 14, "to": 14, "text": "Visit\nonline\nstore","segmentIndex":2 ,"segmentFraction":1  , "text": "เผ็ดน้อย,\nเผ็ดมาก,\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset,\nConfirm"  },
+    { "from": 14, "to": 14, points:[1075,60 ,1075,120 ,1005,120 ,1005,60 ,],"segmentIndex":1 ,"segmentFraction": 0.5  , "text": "\n\n\n\n\n\n\n\n\nเผ็ดน้อย,\nเผ็ดมาก,\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset,\nConfirm"  },
 
 
 
@@ -213,6 +155,7 @@ var roundedRectangleParams = {
             ),
             "draggingTool.isGridSnapEnabled": true,
             
+            
             "animationManager.initialAnimationStyle": go.AnimationManager.None,
             "InitialAnimationStarting": function(e) {
                 var animation = e.subject.defaultAnimation;
@@ -229,6 +172,7 @@ var roundedRectangleParams = {
             positionComputation: function (diagram, pt) {
               return new go.Point(Math.floor(pt.x), Math.floor(pt.y));
             },
+              "ChangedSelection": showLocalOnFullClick
           });
 
       // define the Node template
@@ -428,3 +372,21 @@ var roundedRectangleParams = {
         
       }
     }
+
+    showLocalOnFullClick
+    function showLocalOnFullClick() {
+      var node = myDiagram.selection.first();
+      // var node = myDiagram.findNodeForKey(nodeId++);
+      // console.log(node);
+      if (node !== null) {
+        // make sure the selected node is in the viewport
+        myDiagram.scrollToRect(node.actualBounds);
+        // move the large yellow node behind the selected node to highlight it
+        highlighter.location = new go.Point(node.location.x+40,node.location.y+40);
+        
+        console.log(node.location)
+        // console.log(highlighter.location)
+        
+      }
+    }
+    ////////////////////////////////////////////////////////////////////////////
