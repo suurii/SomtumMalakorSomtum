@@ -28,7 +28,7 @@ nodeDataArray = [
 ]; 
 
 linkDataArray = [
-    { "from": 0, "to": 0, "points":[5,60 ,-50,60 ,-50,150  ,30,77  ],"segmentIndex":2 ,"segmentFraction":0.4  , "text": "ปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset,\nConfirm" },
+    { "from": 0, "to": 0, "points":[5,60 ,-30,60 ,-30,100 ,10,100  ,10,65  ],"segmentIndex":2 ,"segmentFraction":0.5  , "text": "\n\n\n\n\n\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset,\nConfirm" },
     { "from": 0, "to": 1, "text": "เผ็ดน้อย","segmentIndex":2 ,"segmentFraction":0.4 },
     { "from": 0, "to": 2, "text": "เผ็ดมาก","segmentIndex":2 ,"segmentFraction":0.4 },
 
@@ -38,7 +38,7 @@ linkDataArray = [
     { "from": 1, "to": 4, "text": "หมูยอ" ,"segmentIndex":3 ,"segmentFraction":0.4 },
     { "from": 1, "to": 5, "text": "ไข่เค็ม" ,"segmentIndex":3 ,"segmentFraction":0.4 },
 
-    { "from": 2, "to": 1, "text": "เผ็ดน้อย" ,"segmentFraction":0.3 ,"segmentIndex":1},
+    { "from": 2, "to": 1, "points":[230,103 , 230,-22 ,  ], "text": "เผ็ดน้อย" ,"segmentFraction":0.3 },
     { "from": 2, "to": 2, "points":[273,160 ,300,160 ,300,180 ,240,180 ,   ], "text": "เผ็ดมาก,\nปลาร้า","segmentIndex":1 ,"segmentFraction":1  },
     { "from": 2, "to": 6, "text": "ปูเค็ม" ,"segmentIndex":3 ,"segmentFraction":0.4 },
     { "from": 2, "to": 7, "text": "หมูยอ" ,"segmentIndex":3 ,"segmentFraction":0.4 },
@@ -53,14 +53,14 @@ linkDataArray = [
     // { "from": 3, "to": 6, "text": "เผ็ดมาก" },
     // { "from": 3, "to": 9, "text": "ปลาร้า" },
 
-    // { "from": 4, "to": 3, "text": "ปูเค็ม" },
+    { "from": 4, "to": 3, "text": "ปูเค็ม" , "points":[470,-135 ,470,-185],"segmentIndex":0 ,"segmentFraction":0.3  },
     { "from": 4, "to": 4, "points":[406,-130 ,370,-130 ,370,-150 ,440,-150],"segmentIndex":1 ,"segmentFraction":1  , "text": "หมูยอ,\nเผ็ดน้อย" },
     { "from": 4, "to": 5, "text": "ไข่เค็ม" , "points":[410,-85 ,410,-35],"segmentIndex":0 ,"segmentFraction":0.3 },
     // { "from": 4, "to": 7, "text": "เผ็ดมาก" },
     // { "from": 4, "to": 10, "text": "ปลาร้า" },
 
     // { "from": 5, "to": 3, "text": "ปูเค็ม" },
-    // { "from": 5, "to": 4, "text": "หมูยอ" },
+    { "from": 5, "to": 4, "text": "หมูยอ", "points":[470,-35 ,470,-85],"segmentIndex":0 ,"segmentFraction":0.3   },
     { "from": 5, "to": 5, "points":[406,-30 ,370,-30 ,370,-50 ,440,-50],"segmentIndex":1 ,"segmentFraction":1  , "text": "ไข่เค็ม,\nเผ็ดน้อย,\nปลาร้า" },
     // { "from": 5, "to": 8, "text": "เผ็ดมาก" },
 
@@ -72,33 +72,37 @@ linkDataArray = [
     // { "from": 6, "to": 11, "text": "ปลาร้า" },
 
     // { "from": 7, "to": 4, "text": "เผ็ดน้อย" },
-    // { "from": 7, "to": 6, "text": "ปูเค็ม" },
+    { "from": 7, "to": 6, "text": "ปูเค็ม" , "points":[470,165 ,470,115],"segmentIndex":0 ,"segmentFraction":0.5 },
     { "from": 7, "to": 7, "points":[406,170 ,370,170 ,370,150 ,440,150],"segmentIndex":1 ,"segmentFraction":1  , "text": "หมูยอ,\nเผ็ดมาก" },
     { "from": 7, "to": 8, "text": "ไข่เค็ม" , "points":[410,215 ,410,265],"segmentIndex":0 ,"segmentFraction":0.3 },
     // { "from": 7, "to": 12, "text": "ปลาร้า" },
 
     // { "from": 8, "to": 5, "text": "เผ็ดน้อย" },
     // { "from": 8, "to": 6, "text": "ปูเค็ม" },
-    // { "from": 8, "to": 7, "text": "หมูยอ" },
+    { "from": 8, "to": 7, "text": "หมูยอ" , "points":[470,265 ,470,215],"segmentIndex":0 ,"segmentFraction":0.5},
     { "from": 8, "to": 8, "points":[406,270 ,370,270 ,370,250 ,440,250],"segmentIndex":1 ,"segmentFraction":1  , "text": "ไข่เค็ม,\nเผ็ดมาก" },
 
 
     // //layer 3 
-    // { "from": 9, "to": 9, "text": "Visit online store" },
-    // { "from": 9, "to": 10, "text": "Visit online store" },
-    // { "from": 9, "to": 11, "text": "Visit online store" },
+    // { "from": 9, "to": 3, "text": "ปลาร้า" },
+    { "from": 9, "to": 9, "text": "เผ็ดน้อย,\nปูเค็ม,\nไข่เค็ม\n\n\n" , "points":[660,-195 ,660,-220 ,690,-220 ,690,-190, 665,-190],"segmentIndex":1 ,"segmentFraction":0.5},
+    { "from": 9, "to": 10, "text": "หมูยอ", "points":[610,-135 ,610,-85],"segmentIndex":0 ,"segmentFraction":0.5 },
+    { "from": 9, "to": 11, "text": "เผ็ดมาก", "points":[679,-170 ,770,-160 ,770,120 ,679,130],"segmentIndex":0 ,"segmentFraction":0.7  },
 
-    // { "from": 10, "to": 9, "text": "Visit online store" },
-    // { "from": 10, "to": 10, "text": "Visit online store" },
-    // { "from": 10, "to": 12, "text": "Visit online store" },
+    // { "from": 10, "to": 4, "text": "ปลาร้า" },
+    { "from": 10, "to": 9, "text": "ปูเค็ม" , "points":[670,-85 ,670,-135],"segmentIndex":0 ,"segmentFraction":0.5 },
+    { "from": 10, "to": 10, "text": "\n\nเผ็ดน้อย,\nหมูยอ,\nไข่เค็ม", "points":[660,-25 ,660,0 ,690,0,690,-30,666,-30,],"segmentIndex":1 ,"segmentFraction":0.5 },
+    { "from": 10, "to": 12, "text": "เผ็ดมาก", "points":[677,-50 ,750,-30 ,750,250 ,675,260],"segmentIndex":0 ,"segmentFraction":0.5 },
 
-    // { "from": 11, "to": 9, "text": "Visit online store" },
-    // { "from": 11, "to": 11, "text": "Visit online store" },
-    // { "from": 11, "to": 12, "text": "Visit online store" },
+    // { "from": 11, "to": 6, "text": "ปลาร้า" },
+    { "from": 11, "to": 9, "text": "เผ็ดน้อย" , "points":[680,140 ,760,130 ,760,-150 ,680,-160],"segmentIndex":0 ,"segmentFraction":0.4},
+    { "from": 11, "to": 11, "text": "เผ็ดมาก,\nปูเค็ม,\nไข่เค็ม\n\n", "points":[660,105 ,660,80 ,690,80 ,690,110, 665,110],"segmentIndex":1 ,"segmentFraction":0.5 },
+    { "from": 11, "to": 12, "text": "หมูยอ" , "points":[610,165 ,610,215],"segmentIndex":0 ,"segmentFraction":0.5 },
 
-    // { "from": 12, "to": 10, "text": "Visit online store" },
-    // { "from": 12, "to": 11, "text": "Visit online store" },
-    // { "from": 12, "to": 12, "text": "Visit online store" },
+    // { "from": 12, "to": 7, "text": "ปลาร้า" },
+    { "from": 12, "to": 10, "text": "เผ็ดน้อย" , "points":[678,250 ,740,240 ,740,-20 ,675,-40],"segmentIndex":0 ,"segmentFraction":0.5},
+    { "from": 12, "to": 11, "text": "ปูเค็ม" , "points":[670,215 ,670,165],"segmentIndex":0 ,"segmentFraction":0.5 },
+    { "from": 12, "to": 12, "text": "\n\n\nเผ็ดมาก,\nหมูยอ,\nไข่เค็ม" , "points":[660,275 ,660,300 ,690,300,690,270,666,270,],"segmentIndex":1 ,"segmentFraction":0.5},
 
     { "from": 13, "to": 13, "text": "Confirm" , "points":[880,40 ,880,80 ,840,80 ] ,"segmentFraction": 1  ,"segmentIndex": 0},
     { "from": 13, "to": 14,"segmentFraction": 0.5  ,"segmentIndex": 2, "text": "\n\n\n\n\n\n\n\nเผ็ดน้อย,\nเผ็ดมาก,\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset" },
@@ -116,10 +120,10 @@ linkDataArray = [
     { "from": 6, "to": 13, "text": "Confirm" , "points":[465,60 ,500,40  ,800,40 ],"segmentFraction":0.5},
     { "from": 7, "to": 13, "text": "Confirm" , "points":[465,160 ,560,150 ,560,40  ,800,40 ],"segmentFraction":0.3},
     { "from": 8, "to": 13, "text": "Confirm" , "points":[465,260 ,560,250 ,560,40  ,800,40 ],"segmentFraction":0.3},
-    { "from": 9, "to": 13, "text": "Confirm" , "points":[675,-140 ,840,-120 ,840,0 ],"segmentFraction":0.5},
-    { "from": 10, "to": 13, "text": "Confirm", "points":[675,-40 ,840,-20 ,840,0 ],"segmentFraction":0.5},
-    { "from": 11, "to": 13, "text": "Confirm", "points":[675,120 ,840,100 ,840,80 ] ,"segmentFraction":0.5},
-    { "from": 12, "to": 13, "text": "Confirm", "points":[675,220 ,840,200 ,840,80 ] ,"segmentFraction":0.5},
+    { "from": 9, "to": 13, "text": "Confirm" , "points":[675,-140 ,840,-120 ,840,0 ],"segmentFraction":0.75},
+    { "from": 10, "to": 13, "text": "Confirm", "points":[680,-60 ,840,-20 ,840,0 ],"segmentFraction":0.75},
+    { "from": 11, "to": 13, "text": "Confirm", "points":[675,120 ,840,100 ,840,80 ] ,"segmentFraction":0.75},
+    { "from": 12, "to": 13, "text": "Confirm", "points":[675,220 ,840,200 ,840,80 ] ,"segmentFraction":0.75},
 
     { "from": -1, "to": 0, "text": ""},
     { "from": 1, "to": 0, "text": "Reset" , "points":[240,-100 ,240,-270 ,40,-270 ,40,0 ,]},
