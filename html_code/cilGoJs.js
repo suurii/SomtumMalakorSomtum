@@ -51,43 +51,43 @@ linkDataArray = [
     { "from": 3, "to": 3, "points":[406,-230 ,370,-230 ,370,-250 ,440,-250],"segmentIndex":1 ,"segmentFraction":0.5  , "text": "เผ็ดน้อย" },
     { "from": 3, "to": 4, "text": "หมูยอ" , "points":[410,-185 ,410,-135],"segmentIndex":0 ,"segmentFraction":0.3  },
     { "from": 3, "to": 5, "text": "ไข่เค็ม" ,"points":[480,-220 ,550,-220 ,550,-10 ,480,-10],"segmentIndex":0 ,"segmentFraction":0.3},
-    { "from": 3, "to": 6, "text": "เผ็ดมาก" },
+    { "from": 3, "to": 6, "text": "เผ็ดมาก" ,"points":[465, -240, 570,-240, 570,60 ,465,60],"segmentIndex":0 ,"segmentFraction":0.45},
     { "from": 3, "to": 9, "text": "ปลาร้า" , "points":[475,-190,608,-180,],"segmentIndex":0 ,"segmentFraction":0.15},
 
     { "from": 4, "to": 1, "text": "\nหมูยอ", "points":[405,-95 ,320,-95,320,-70 ,280,-70],"segmentIndex": 0 ,"segmentFraction":0.3  },
     { "from": 4, "to": 3, "text": "ปูเค็ม" , "points":[470,-135 ,470,-185],"segmentIndex":0 ,"segmentFraction":0.3  },
     { "from": 4, "to": 4, "points":[406,-130 ,370,-130 ,370,-150 ,440,-150],"segmentIndex":1 ,"segmentFraction":1  , "text": "เผ็ดน้อย" },
     { "from": 4, "to": 5, "text": "ไข่เค็ม" , "points":[410,-85 ,410,-35],"segmentIndex":0 ,"segmentFraction":0.3 },
-    // { "from": 4, "to": 7, "text": "เผ็ดมาก" },
+    { "from": 4, "to": 7, "text": "เผ็ดมาก","points":[475, -120, 570,-120, 570,180 ,475,180],"segmentIndex":0 ,"segmentFraction":0.25 },
     { "from": 4, "to": 10, "text": "ปลาร้า", "points":[475,-90,608,-80,],"segmentIndex":0 ,"segmentFraction":0.15 },
 
     { "from": 5, "to": 1, "text": "\nไข่เค็ม" , "points":[400,0 ,320,0,320,-70 ,280,-70],"segmentIndex":0 ,"segmentFraction":0.3},
     { "from": 5, "to": 3, "text": "ปูเค็ม" ,"points":[480,-20, 540,-20 ,540,-210  ,480,-210],"segmentIndex":0 ,"segmentFraction":0.3},
     { "from": 5, "to": 4, "text": "หมูยอ", "points":[470,-35 ,470,-85],"segmentIndex":0 ,"segmentFraction":0.3   },
     { "from": 5, "to": 5, "points":[406,-30 ,370,-30 ,370,-50 ,440,-50],"segmentIndex":1 ,"segmentFraction":1  , "text": "เผ็ดน้อย,\nปลาร้า" },
-    // { "from": 5, "to": 8, "text": "เผ็ดมาก" },
+    { "from": 5, "to": 8, "text": "เผ็ดมาก" ,"points":[480, 0, 570,0, 570,300 ,480,300],"segmentIndex":0 ,"segmentFraction":0.25 },
 
 
     // //layer 2 down
     { "from": 6, "to": 1, "text": "\nปูเค็ม" , "points":[400,100 ,320,100,320,130 ,280,130],"segmentIndex":0 ,"segmentFraction":0.3  },
-    // { "from": 6, "to": 3, "text": "เผ็ดน้อย" },
-    { "from": 6, "to": 6, "points":[406,70 ,370,70 ,370,50 ,440,50],"segmentIndex":1 ,"segmentFraction":0.5  , "text": "ปูเค็ม,เผ็ดมาก" },
+    { "from": 6, "to": 3, "text": "เผ็ดน้อย" ,"points":[475,70,  570,70, 570,-230 ,475, -230,],"segmentIndex":0 ,"segmentFraction":0.45},
+    { "from": 6, "to": 6, "points":[406,70 ,370,70 ,370,50 ,440,50],"segmentIndex":1 ,"segmentFraction":0.5  , "text": "เผ็ดมาก" },
     { "from": 6, "to": 7, "text": "หมูยอ" , "points":[410,115 ,410,165],"segmentIndex":0 ,"segmentFraction":0.3 },
     { "from": 6, "to": 8, "text": "ไข่เค็ม" ,"points":[480,80 ,550,80 ,550,290 ,480,290],"segmentIndex":0 ,"segmentFraction":0.3},
     { "from": 6, "to": 11, "text": "ปลาร้า", "points":[477,110,615,120,],"segmentIndex":0 ,"segmentFraction":0.2},
 
     { "from": 7, "to": 1, "text": "\nหมูยอ" , "points":[400,200 ,320,200,320,130 ,280,130],"segmentIndex":0 ,"segmentFraction":0.3  },
-    // { "from": 7, "to": 4, "text": "เผ็ดน้อย" },
+    { "from": 7, "to": 4, "text": "เผ็ดน้อย" ,"points":[480,190,  570,190, 570,-110 ,480, -110,],"segmentIndex":0 ,"segmentFraction":0.25},
     { "from": 7, "to": 6, "text": "ปูเค็ม" , "points":[470,165 ,470,115],"segmentIndex":0 ,"segmentFraction":0.5 },
-    { "from": 7, "to": 7, "points":[406,170 ,370,170 ,370,150 ,440,150],"segmentIndex":1 ,"segmentFraction":1  , "text": "หมูยอ,\nเผ็ดมาก" },
+    { "from": 7, "to": 7, "points":[406,170 ,370,170 ,370,150 ,440,150],"segmentIndex":1 ,"segmentFraction":1  , "text": "เผ็ดมาก" },
     { "from": 7, "to": 8, "text": "ไข่เค็ม" , "points":[410,215 ,410,265],"segmentIndex":0 ,"segmentFraction":0.3 },
     { "from": 7, "to": 12, "text": "ปลาร้า", "points":[477,210,615,220,],"segmentIndex":0 ,"segmentFraction":0.2 },
 
     { "from": 8, "to": 1, "text": "\nไข่เค็ม" , "points":[400,300 ,320,300,320,130 ,280,130],"segmentIndex":0 ,"segmentFraction":0.3  },
-    // { "from": 8, "to": 5, "text": "เผ็ดน้อย" },
+    { "from": 8, "to": 5, "text": "เผ็ดน้อย" ,"points":[474,310,  570,310, 570,10 ,474, 10,],"segmentIndex":0 ,"segmentFraction":0.25},
     { "from": 8, "to": 6, "text": "ปูเค็ม" ,"points":[480,280, 540,280 ,540,90  ,480,90],"segmentIndex":0 ,"segmentFraction":0.3 },
     { "from": 8, "to": 7, "text": "หมูยอ" , "points":[470,265 ,470,215],"segmentIndex":0 ,"segmentFraction":0.5},
-    { "from": 8, "to": 8, "points":[406,270 ,370,270 ,370,250 ,440,250],"segmentIndex":1 ,"segmentFraction":1  , "text": "ไข่เค็ม,\nเผ็ดมาก" },
+    { "from": 8, "to": 8, "points":[406,270 ,370,270 ,370,250 ,440,250],"segmentIndex":1 ,"segmentFraction":1  , "text": "เผ็ดมาก,\nปลาร้า" },
 
 
     // //layer 3 
@@ -125,7 +125,7 @@ linkDataArray = [
     { "from": 4, "to": 13, "text": "Confirm" , "points":[465,-80 ,560,-70 ,560,40  ,800,40 ],"segmentFraction":0.3},
     { "from": 5, "to": 13, "text": "Confirm" , "points":[460,20 ,500,40  ,800,40 ],"segmentFraction":0.5},
     { "from": 6, "to": 13, "text": "Confirm" , "points":[460,55 ,500,40  ,800,40 ],"segmentFraction":0.5},
-    { "from": 7, "to": 13, "text": "Confirm" , "points":[465,155 ,560,150 ,560,40  ,800,40 ],"segmentFraction":0.3},
+    { "from": 7, "to": 13, "text": "Confirm" , "points":[460,155 ,560,150 ,560,40  ,800,40 ],"segmentFraction":0.3},
     { "from": 8, "to": 13, "text": "Confirm" , "points":[465,260 ,560,250 ,560,40  ,800,40 ],"segmentFraction":0.3},
     { "from": 9, "to": 13, "text": "Confirm" , "points":[675,-140 ,840,-120 ,840,0 ],"segmentFraction":0.75},
     { "from": 10, "to": 13, "text": "Confirm", "points":[680,-60 ,840,-20 ,840,0 ],"segmentFraction":0.75},
@@ -183,7 +183,7 @@ var roundedRectangleParams = {
             positionComputation: function (diagram, pt) {
               return new go.Point(Math.floor(pt.x), Math.floor(pt.y));
             },
-              "ChangedSelection": showLocalOnFullClick
+              // "ChangedSelection": showLocalOnFullClick
           });
 
       // define the Node template
