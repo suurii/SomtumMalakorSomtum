@@ -44,8 +44,6 @@ linkDataArray = [
     { "from": 2, "to": 7, "points":[280,140,340,140,340,190,400,190 ], "text": "หมูยอ\n" ,"segmentIndex":2 ,"segmentFraction":0.4 },
     { "from": 2, "to": 8, "points":[280,140,340,140,340,290,400,290 ], "text": "ไข่เค็ม\n" ,"segmentIndex":2 ,"segmentFraction":0.4 },
 
-
-
     //layer 2 up
     { "from": 3, "to": 1, "text": "\nปูเค็ม" , "points":[400,-200 ,320,-200,320,-70 ,280,-70],"segmentIndex":0 ,"segmentFraction":0.3  },
     { "from": 3, "to": 3, "points":[406,-230 ,370,-230 ,370,-250 ,440,-250],"segmentIndex":1 ,"segmentFraction":0.5  , "text": "เผ็ดน้อย" },
@@ -66,7 +64,6 @@ linkDataArray = [
     { "from": 5, "to": 4, "text": "หมูยอ", "points":[470,-35 ,470,-85],"segmentIndex":0 ,"segmentFraction":0.3   },
     { "from": 5, "to": 5, "points":[406,-30 ,370,-30 ,370,-50 ,440,-50],"segmentIndex":1 ,"segmentFraction":1  , "text": "เผ็ดน้อย,\nปลาร้า" },
     { "from": 5, "to": 8, "text": "เผ็ดมาก" ,"points":[480, 0, 570,0, 570,300 ,480,300],"segmentIndex":0 ,"segmentFraction":0.25 },
-
 
     // //layer 2 down
     { "from": 6, "to": 1, "text": "\nปูเค็ม" , "points":[400,100 ,320,100,320,130 ,280,130],"segmentIndex":0 ,"segmentFraction":0.3  },
@@ -89,8 +86,7 @@ linkDataArray = [
     { "from": 8, "to": 7, "text": "หมูยอ" , "points":[470,265 ,470,215],"segmentIndex":0 ,"segmentFraction":0.5},
     { "from": 8, "to": 8, "points":[406,270 ,370,270 ,370,250 ,440,250],"segmentIndex":1 ,"segmentFraction":1  , "text": "เผ็ดมาก,\nปลาร้า" },
 
-
-    // //layer 3 
+    //layer 3 
     { "from": 9, "to": 3, "text": "ปลาร้า" , "points":[615,-190,475,-200],"segmentIndex":0 ,"segmentFraction":0.2},
     { "from": 9, "to": 9, "text": "เผ็ดน้อย,\nปูเค็ม,\nไข่เค็ม\n\n\n" , "points":[660,-195 ,660,-220 ,690,-220 ,690,-190, 665,-190],"segmentIndex":1 ,"segmentFraction":0.5},
     { "from": 9, "to": 10, "text": "หมูยอ", "points":[610,-135 ,610,-85],"segmentIndex":0 ,"segmentFraction":0.5 },
@@ -116,9 +112,7 @@ linkDataArray = [
 
     { "from": 14, "to": 14, "points":[1075,60 ,1075,120 ,1005,120 ,1005,60 ,],"segmentIndex":1 ,"segmentFraction": 0.5  , "text": "\n\n\n\n\n\n\n\n\nเผ็ดน้อย,\nเผ็ดมาก,\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset,\nConfirm"  },
 
-
-
-    
+    //Confirm
     { "from": 1, "to": 13, "text": "Confirm" , "points":[240,-20 ,350,40  ,800,40 ],"segmentFraction":0.4},
     { "from": 2, "to": 13, "text": "Confirm" , "points":[240,100 ,350,40  ,800,40 ],"segmentFraction":0.4},
     { "from": 3, "to": 13, "text": "Confirm" , "points":[465,-180 ,560,-170 ,560,40  ,800,40 ],"segmentFraction":0.3},
@@ -132,6 +126,7 @@ linkDataArray = [
     { "from": 11, "to": 13, "text": "Confirm", "points":[675,120 ,840,100 ,840,80 ] ,"segmentFraction":0.75},
     { "from": 12, "to": 13, "text": "Confirm", "points":[675,220 ,840,200 ,840,80 ] ,"segmentFraction":0.75},
 
+    //Start and Reset
     { "from": -1, "to": 0, "text": ""},
     { "from": 1, "to": 0, "text": "Reset" , "points":[240,-100 ,240,-270 ,40,-270 ,40,0 ,]},
     { "from": 2, "to": 0, "text": "Reset" , "points":[240,180 ,240,350 ,40,350 ,40,80 ],},
@@ -149,11 +144,22 @@ linkDataArray = [
 ];
 
 var $ = go.GraphObject.make;  // for conciseness in defining templates
-// some constants that will be reused within templates
-var roundedRectangleParams = {
-    parameter1: 20,  // set the rounded corner
-    spot1: go.Spot.TopLeft, spot2: go.Spot.BottomRight  // make content go all the way to inside edges of rounded corners
-};
+
+function highlightNode(nodeId) {
+  // var node = myDiagram.selection.first();
+  var node = myDiagram.findNodeForKey(nodeId++);
+  // console.log(node);
+  if (node !== null) {
+    // make sure the selected node is in the viewport
+    myDiagram.scrollToRect(node.actualBounds);
+    // move the large yellow node behind the selected node to highlight it
+    highlighter.location = new go.Point(node.location.x+40,node.location.y+40);
+    
+    // console.log(node.location)
+    // console.log(highlighter.location)
+    
+  }
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function init() {
      myDiagram =
@@ -197,7 +203,7 @@ var roundedRectangleParams = {
           },
           new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
           // define the node's outer shape, which will surround the TextBlock
-          $(go.Shape, "RoundedRectangle", roundedRectangleParams,
+          $(go.Shape, "RoundedRectangle", {parameter1: 20,spot1: go.Spot.TopLeft, spot2: go.Spot.BottomRight},
             {
               name: "SHAPE", fill: null, strokeWidth: 0,
               stroke: null,
@@ -223,13 +229,13 @@ var roundedRectangleParams = {
               portId: "",
               fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
               toLinkable: true, toLinkableSelfNode: true, toLinkableDuplicates: true,
-              // cursor: "pointer"
+              // cursor: "pointer",
             }),
           $(go.TextBlock, "Start",
             {
               font: "bold 18pt TH SarabunPSK, bold arial, sans-serif",
               textAlign: "center",
-              stroke: "whitesmoke"
+              stroke: "whitesmoke",
             },
             new go.Binding("text").makeTwoWay()
             )
@@ -316,7 +322,7 @@ var roundedRectangleParams = {
         },
         new go.Binding("points").makeTwoWay(),
         $(go.Shape,  // the link path shape
-          { isPanelMain: true, strokeWidth: 1 }),
+          { isPanelMain: true, strokeWidth: 1,  }),
         $(go.Shape,  // the arrowhead
           { toArrow: "Standard", stroke: null }),
         $(go.TextBlock, "transition",  // the label text
@@ -334,25 +340,23 @@ var roundedRectangleParams = {
       
       );
 
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // Create a part in the background of the full diagram to highlight the selected node
-        highlighter =
-          $(go.Part, "Auto",
-            {
-              layerName: "Background",
-              selectable: false,
-              isInDocumentBounds: false,
-              locationSpot: go.Spot.Center
-            },
-            $(go.Shape, "Ellipse",
-              {
-                fill: $(go.Brush, "Radial", { 0.5: "yellow", 1.0: "rgba(0, 0, 0, 0)"}),
-                stroke: null,
-                desiredSize: new go.Size(150, 150)
-              })
-          );
-        myDiagram.add(highlighter);
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Create a part in the background of the full diagram to highlight the selected node
+    highlighter =
+      $(go.Part, "Auto",
+        {
+          layerName: "Background",
+          selectable: false,
+          isInDocumentBounds: false,
+          locationSpot: go.Spot.Center
+        },
+        $(go.Shape, "Ellipse",
+          {
+            fill: $(go.Brush, "Radial", { 0.5: "yellow", 1.0: "rgba(0, 0, 0, 0)"}),
+            stroke: null,
+            desiredSize: new go.Size(150, 150)
+          })
+      );
+    myDiagram.add(highlighter);
 
     myDiagram.model = new go.GraphLinksModel(nodeDataArray,linkDataArray);
     // myDiagram.model.isReadOnly = true;
@@ -360,36 +364,4 @@ var roundedRectangleParams = {
     highlightNode(0);
     }
 
-    function highlightNode(nodeId) {
-      // var node = myDiagram.selection.first();
-      var node = myDiagram.findNodeForKey(nodeId++);
-      // console.log(node);
-      if (node !== null) {
-        // make sure the selected node is in the viewport
-        myDiagram.scrollToRect(node.actualBounds);
-        // move the large yellow node behind the selected node to highlight it
-        highlighter.location = new go.Point(node.location.x+40,node.location.y+40);
-        
-        // console.log(node.location)
-        // console.log(highlighter.location)
-        
-      }
-    }
-
-    showLocalOnFullClick
-    function showLocalOnFullClick() {
-      var node = myDiagram.selection.first();
-      // var node = myDiagram.findNodeForKey(nodeId++);
-      // console.log(node);
-      if (node !== null) {
-        // make sure the selected node is in the viewport
-        myDiagram.scrollToRect(node.actualBounds);
-        // move the large yellow node behind the selected node to highlight it
-        highlighter.location = new go.Point(node.location.x+40,node.location.y+40);
-        
-        console.log(node.location)
-        // console.log(highlighter.location)
-        
-      }
-    }
     ////////////////////////////////////////////////////////////////////////////
