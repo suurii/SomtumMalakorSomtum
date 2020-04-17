@@ -29,7 +29,7 @@ nodeDataArray = [
 
 linkDataArray = [
     { "from": 0, "to": 0, "points":[5,60 ,-30,60 ,-30,100 ,10,100  ,10,65  ],"segmentIndex":2 ,"segmentFraction":0.5  , "text": "\n\n\n\n\n\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset,\nConfirm" },
-    { "from": 0, "to": 1, "text": "เผ็ดน้อย","segmentIndex":2 ,"segmentFraction":0.4 },
+    { "from": 0, "to": 1, "text": "เผ็ดน้อย","segmentIndex":2 ,"segmentFraction":0.4 ,"progress":true},
     { "from": 0, "to": 2, "text": "เผ็ดมาก","segmentIndex":2 ,"segmentFraction":0.4 },
 
     { "from": 1, "to": 1, "points":[273,-40 ,300,-40 ,300,-20 ,240,-20 ,  ], "text": "เผ็ดน้อย,\nปลาร้า","segmentIndex":1 ,"segmentFraction":1  },
@@ -160,17 +160,18 @@ function highlightNode(nodeId) {
     
   }
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function init() {
      myDiagram =
         $(go.Diagram, "myDiagramDiv",  // must name or refer to the DIV HTML element
           {
-            grid: $(go.Panel, "Grid",
-              { gridCellSize: new go.Size(10, 10) },
-              $(go.Shape, "LineH", { stroke: "lightgray", strokeWidth: 0.5 }),
-              $(go.Shape, "LineV", { stroke: "lightgray", strokeWidth: 0.5 })
-            ),
-            "draggingTool.isGridSnapEnabled": true,
+            // grid: $(go.Panel, "Grid",
+            //   { gridCellSize: new go.Size(10, 10) },
+            //   $(go.Shape, "LineH", { stroke: "lightgray", strokeWidth: 0.5 }),
+            //   $(go.Shape, "LineV", { stroke: "lightgray", strokeWidth: 0.5 })
+            // ),
+            // "draggingTool.isGridSnapEnabled": true,
             
             
             "animationManager.initialAnimationStyle": go.AnimationManager.None,
@@ -286,12 +287,12 @@ function highlightNode(nodeId) {
       //         return progress=="true" ? 2.5 : 1.5;
       //       })
       //       ),
-      //     $(go.Shape,  // the arrowhead
-      //       { toArrow: "standard", stroke: null },
-      //       new go.Binding('fill', 'progress', function(progress) {
-      //         return progress=="true" ? "#52ce60" /* green */ : 'black';
-      //       }),
-      //       ),
+          // $(go.Shape,  // the arrowhead
+          //   { toArrow: "standard", stroke: null },
+          //   new go.Binding('fill', 'progress', function(progress) {
+          //     return progress=="true" ? "#52ce60" /* green */ : 'black';
+          //   }),
+          //   ),
       //     $(go.Panel, "Auto",
       //       $(go.Shape,  // the label background, which becomes transparent around the edges
       //         {
@@ -322,9 +323,20 @@ function highlightNode(nodeId) {
         },
         new go.Binding("points").makeTwoWay(),
         $(go.Shape,  // the link path shape
-          { isPanelMain: true, strokeWidth: 1,  }),
+          { isPanelMain: true, strokeWidth: 1  },
+          new go.Binding('stroke', 'progress', function(progress) {
+            return progress==true ? "#52ce60" /* green */ : 'black';
+          }),
+          new go.Binding('strokeWidth', 'progress', function(progress) {
+            return progress==true ? 2.5 : 1.5;
+          })
+          ),
+
         $(go.Shape,  // the arrowhead
-          { toArrow: "Standard", stroke: null }),
+          { toArrow: "Standard", stroke: null },
+          new go.Binding('fill', 'progress', function(progress) {
+            return progress==true ? "#52ce60" /* green */ : 'black';
+          })),
         $(go.TextBlock, "transition",  // the label text
           {
             textAlign: "center",
@@ -336,6 +348,9 @@ function highlightNode(nodeId) {
           new go.Binding("text").makeTwoWay(),
           new go.Binding("segmentIndex").makeTwoWay(),
           new go.Binding("segmentFraction").makeTwoWay(),
+          new go.Binding("stroke",'progress',function(progress){
+            return progress==true ? "#52ce60" /* green */ : 'black';
+          })
           ),
       
       );
