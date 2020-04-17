@@ -29,7 +29,7 @@ nodeDataArray = [
 
 linkDataArray = [
     { "from": 0, "to": 0, "points":[5,60 ,-30,60 ,-30,100 ,10,100  ,10,65  ],"segmentIndex":2 ,"segmentFraction":0.5  , "text": "\n\n\n\n\n\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset,\nConfirm" },
-    { "from": 0, "to": 1, "text": "เผ็ดน้อย","segmentIndex":2 ,"segmentFraction":0.4 ,"progress":true},
+    { "from": 0, "to": 1, "text": "เผ็ดน้อย","segmentIndex":2 ,"segmentFraction":0.4 },
     { "from": 0, "to": 2, "text": "เผ็ดมาก","segmentIndex":2 ,"segmentFraction":0.4 },
 
     { "from": 1, "to": 1, "points":[273,-40 ,300,-40 ,300,-20 ,240,-20 ,  ], "text": "เผ็ดน้อย,\nปลาร้า","segmentIndex":1 ,"segmentFraction":1  },
@@ -145,8 +145,13 @@ linkDataArray = [
 
 var $ = go.GraphObject.make;  // for conciseness in defining templates
 
+// How to use
+// call this function with these parameters
+// nodeId : [0,14] id of target node
+// ex. highlightNode(2)
+// *** only 1 node can highlighted ***
+// if want more node to be highlighted, contact previous programmer na ja
 function highlightNode(nodeId) {
-  // var node = myDiagram.selection.first();
   var node = myDiagram.findNodeForKey(nodeId++);
   // console.log(node);
   if (node !== null) {
@@ -154,10 +159,27 @@ function highlightNode(nodeId) {
     myDiagram.scrollToRect(node.actualBounds);
     // move the large yellow node behind the selected node to highlight it
     highlighter.location = new go.Point(node.location.x+40,node.location.y+40);
-    
     // console.log(node.location)
     // console.log(highlighter.location)
-    
+  }
+}
+
+// How to use
+// call this function with these parameters
+// from : [-1,14] id of "from" node
+// to : [-1,14] id of "to" node
+// colorPath : value of RGB path's color [value also word ex. "#52ce60",'blue'] 
+// colorText : value of RGB path's textBlock [value also word ex. "#52ce60",'red'] 
+// ex. highlightPath(0,1,'blue','red')
+// if want smth more , contact CXZ na ja 
+function highlightPath(from,to,colorPath,colorText) {
+  for( p of myDiagram.model.linkDataArray){
+    if(p.from == from && p.to == to){
+      // console.log(p);
+      myDiagram.model.set(p,'colorPath',colorPath);
+      myDiagram.model.set(p,'colorText',colorText);
+      break;
+    }
   }
 }
 
@@ -266,52 +288,6 @@ function highlightNode(nodeId) {
         )
       );
 
-      // // replace the default Link template in the linkTemplateMap
-      // myDiagram.linkTemplate =
-      //   $(go.Link,  // the whole link panel
-      //     {
-      //       // routing: go.Link.AvoidsNodes,
-      //       curve: go.Link.Bezier,
-      //       // adjusting: go.Link.Stretch,
-      //       // reshapable: true, relinkableFrom: true, relinkableTo: true,
-      //       // toShortLength: 3
-      //     },
-      //     new go.Binding("points").makeTwoWay(),
-      //     new go.Binding("curviness"),
-      //     $(go.Shape,  // the link shape
-      //       { strokeWidth: 1.5 },
-      //       new go.Binding('stroke', 'progress', function(progress) {
-      //         return progress=="true" ? "#52ce60" /* green */ : 'black';
-      //       }),
-      //       new go.Binding('strokeWidth', 'progress', function(progress) {
-      //         return progress=="true" ? 2.5 : 1.5;
-      //       })
-      //       ),
-          // $(go.Shape,  // the arrowhead
-          //   { toArrow: "standard", stroke: null },
-          //   new go.Binding('fill', 'progress', function(progress) {
-          //     return progress=="true" ? "#52ce60" /* green */ : 'black';
-          //   }),
-          //   ),
-      //     $(go.Panel, "Auto",
-      //       $(go.Shape,  // the label background, which becomes transparent around the edges
-      //         {
-      //           fill: $(go.Brush, "Radial",
-      //             { 0: "rgb(245, 245, 245)", 0.7: "rgb(245, 245, 245)", 1: "rgba(245, 245, 245, 0)" }),
-      //           stroke: null
-      //         }),
-          //   $(go.TextBlock, "transition",  // the label text
-          //     {
-          //       textAlign: "center",
-          //       font: "9pt helvetica, arial, sans-serif",
-          //       margin: 4,
-          //       editable: true  // enable in-place editing
-          //     },
-          //     // editing the text automatically updates the model data
-          //     new go.Binding("text").makeTwoWay())
-          // )
-      //   );
-
       myDiagram.linkTemplate =
       $(go.Link,  // the whole link panel
         { relinkableFrom: true, relinkableTo: true, reshapable: true, resegmentable: true },
@@ -324,18 +300,18 @@ function highlightNode(nodeId) {
         new go.Binding("points").makeTwoWay(),
         $(go.Shape,  // the link path shape
           { isPanelMain: true, strokeWidth: 1  },
-          new go.Binding('stroke', 'progress', function(progress) {
-            return progress==true ? "#52ce60" /* green */ : 'black';
+          new go.Binding('stroke', 'colorPath', function(progress) {
+            return progress;
           }),
-          new go.Binding('strokeWidth', 'progress', function(progress) {
-            return progress==true ? 2.5 : 1.5;
-          })
+          // new go.Binding('strokeWidth', 'colorPath', function(progress) {
+          //   return progress==true ? 2.5 : 1.5;
+          // })
           ),
 
         $(go.Shape,  // the arrowhead
           { toArrow: "Standard", stroke: null },
-          new go.Binding('fill', 'progress', function(progress) {
-            return progress==true ? "#52ce60" /* green */ : 'black';
+          new go.Binding('fill', 'colorPath', function(progress) {
+            return progress;
           })),
         $(go.TextBlock, "transition",  // the label text
           {
@@ -348,8 +324,8 @@ function highlightNode(nodeId) {
           new go.Binding("text").makeTwoWay(),
           new go.Binding("segmentIndex").makeTwoWay(),
           new go.Binding("segmentFraction").makeTwoWay(),
-          new go.Binding("stroke",'progress',function(progress){
-            return progress==true ? "#52ce60" /* green */ : 'black';
+          new go.Binding("stroke",'colorText',function(progress){
+            return progress;
           })
           ),
       
