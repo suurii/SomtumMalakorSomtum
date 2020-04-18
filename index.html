@@ -87,7 +87,7 @@
     <!-- --------------------------------------------------------------------------- -->
     <div id="open-modal" class="modal-window">
         <div>
-        <a href="#" title="Close" class="modal-close">Close</a>
+        <a onclick="init()" href="#" title="Close" class="modal-close">Close</a>
         <div class="h1modal">DFA เครื่องทำส้มตำ  <img src="image/papaya.svg" style="width: 70px; height: 70px;"></div>
         <div>เครื่อง SomtumMalakorSomtum เป็นเครื่องทำส้มตำของ <b>โขกโป๊ก resterant</b> โดยมีข้อจำกัดจากเชฟว่า ไม่อนุญาตให้มีเมนูใดจากภัตตาคารสุดหรูนี้ ถูกเสิร์ฟโดยที่ขาดส่วนผสมใด
             หรือมีปริมาณของวัตถุดิบใดๆที่ผิดเพี้ยนไปจากสูตรต้นตำรับ ด้วยความอร่อยเลิศรสของอาหาร และความมั่นใจในฝีมือของเชฟนั้น โขกโป๊ก resterant จึงเล็งเห็นว่าเครื่องทำส้มตำนี้จะต้องเป็นประโยชน์
@@ -98,7 +98,6 @@
     <script>
         window.onload = () => {
             window.location.hash = 'open-modal'
-            init()
         }
     </script>
     
