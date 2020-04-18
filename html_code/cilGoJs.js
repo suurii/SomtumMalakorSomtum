@@ -383,7 +383,6 @@ function restart() {
     Confirm: false,
     Reset: false,
   }
-
 }
 
 function handleClick(bottonName) {
