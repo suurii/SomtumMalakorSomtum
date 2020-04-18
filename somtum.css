@@ -129,10 +129,16 @@ h1{
 
 
 }
-.outsom{
-    width:100%;
-    height: 200px;
-    margin-top:10px;
+.imgcontainer{
+  display:flex;
+  justify-content: center;
+  width:100%;
+  /* margin-top:10px;   */
+}
+  .outsom{
+    max-width: 80%;
+    max-height: 50%;
+    
 }
 .dfaimg{
     width:100%;
@@ -346,6 +352,8 @@ h2{
      -moz-filter: brightness(0.5) grayscale(.8) opacity(.9);
           filter: brightness(0.5) grayscale(.8) opacity(.9);
 }
+
+ /* bt confirm starttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt */
   @import url(https://fonts.googleapis.com/css?family=Dosis);
   * {
     box-sizing: border-box;
@@ -366,6 +374,7 @@ h2{
       font-size: 1.5em;
    }
  }
+ 
  .cf{
   display: flex;
   justify-content: center;
@@ -380,7 +389,7 @@ h2{
     top: 0;
     bottom: 0;
     background-color: rgba(0, 10, 50, 0.2);
-    transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
+    /* transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9); */
     transform: translate3D(0, 0, 0);
     border-radius: 10px;
  }
@@ -414,12 +423,12 @@ h2{
     /* font-weight: bold; */
     letter-spacing: 0.1em;
     color: white;
-    padding: 5px 60px;
+    padding: 5px 30%;
     background-color: #fbfbfb;
     display: block;
     width: 100%;
     height: 100%;
-    transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
+    /* transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9); */
     border-radius: 10px;
     text-align: center;
     display: inline-block;

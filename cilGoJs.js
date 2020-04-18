@@ -445,7 +445,7 @@ function handleClick(bottonName) {
   machine.setCurrentState(next)
   if(['Confirm','Trap_state'].indexOf(machine.current_State.name) < 0){
     document.getElementById('name').innerHTML = machine.current_State.name.split('_').join('')
-    document.getElementById('imgout').src =  'image/' + imgmap[machine.current_State.name]
+    document.getElementById('imgout').src =  'image/' + imgmap[machine.current_State.name] + '.png'
   }
   if(machine.current_State.name == 'Start_state'){
     document.getElementById('name').innerHTML = 'ตำไทย'
@@ -477,19 +477,19 @@ let Botton = {
   }
 }
 let imgmap = {
-  Start_state : '1TumThai.png',
-  ตำไทย_เผ็ดมาก: '1TumThai.png',
-  ตำไทย_เผ็ดน้อย: '1TumThai.png',
-  ปูเค็ม_เผ็ดน้อย: 'Poo.png',
-  หมูยอ_เผ็ดน้อย: '2Mooyo.png',
-  ไข่เค็ม_เผ็ดน้อย: '3Khaikem.png',
-  ปูเค็ม_เผ็ดมาก: 'Poo.png',
-  หมูยอ_เผ็ดมาก: '2Mooyo.png',
-  ไข่เค็ม_เผ็ดมาก: '3Khaikem.png',
-  ตำปู_ปลาร้า_เผ็ดน้อย: '4Plara.png',
-  ตำหมูยอ_ปลาร้า_เผ็ดน้อย: '2Mooyo.png',
-  ตำปู_ปลาร้า_เผ็ดมาก: '4Plara.png',
-  ตำหมูยอ_ปลาร้า_เผ็ดมาก: '2Mooyo.png'
+  Start_state : '1TumThai',
+  ตำไทย_เผ็ดมาก: '1TumThai',
+  ตำไทย_เผ็ดน้อย: '1TumThai',
+  ปูเค็ม_เผ็ดน้อย: 'Poo',
+  หมูยอ_เผ็ดน้อย: '2Mooyo',
+  ไข่เค็ม_เผ็ดน้อย: '3Khaikem',
+  ปูเค็ม_เผ็ดมาก: 'Poo',
+  หมูยอ_เผ็ดมาก: '2Mooyo',
+  ไข่เค็ม_เผ็ดมาก: '3Khaikem',
+  ตำปู_ปลาร้า_เผ็ดน้อย: '4Plara',
+  ตำหมูยอ_ปลาร้า_เผ็ดน้อย: '2Mooyo',
+  ตำปู_ปลาร้า_เผ็ดมาก: '4Plara',
+  ตำหมูยอ_ปลาร้า_เผ็ดมาก: '2Mooyo'
 }
 
 
