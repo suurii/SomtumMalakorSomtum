@@ -1,8 +1,8 @@
 
 var now = 0;
-// var oldfrom = 0,oldTo = 0;
+var oldFrom = -1,oldTo = 0,toggleOpacity=0;
 nodeDataArray = [
-  { "key": -1, "loc": "-75 25" },
+  { "key": -1, "loc": "-75 28" },
 
   { "key": 0, "loc": "0 0", "text": "Start\nstate", "category": "Start" },
 
@@ -166,6 +166,8 @@ function highlightNode(nodeId) {
   }
 }
 
+
+
 // How to use
 // call this function with these parameters
 // from : [-1,14] id of "from" node
@@ -191,6 +193,35 @@ function highlightPath(from, to, colorPath, colorText) {
       }
     else{
       myDiagram.model.set(p, 'bold', false);
+    }
+  }
+  oldFrom = from;
+  oldTo = to;
+  if(toggleOpacity==1)
+    _toggleShowPath();
+}
+
+
+function toggleShowPath(){
+  if (toggleOpacity==1)
+    toggleOpacity = 0;
+  else
+    toggleOpacity = 1; 
+  _toggleShowPath();
+}
+
+function _toggleShowPath(){
+  for (p of myDiagram.model.linkDataArray) {
+    if (p.from == oldFrom && p.to == oldTo) {
+      if (toggleOpacity==1)
+        myDiagram.model.set(p, 'opacity', toggleOpacity);
+    }
+    else if(p.from == oldTo){
+      if (toggleOpacity==1)
+        myDiagram.model.set(p, 'opacity', toggleOpacity);
+      }
+    else{
+      myDiagram.model.set(p, 'opacity', 1-toggleOpacity);
     }
   }
 }
@@ -308,7 +339,9 @@ function init() {
         adjusting: go.Link.End,
         curve: go.Link.JumpOver,
         corner: 5,
+        opacity: 1.0
       },
+      new go.Binding("opacity").makeTwoWay(),
       new go.Binding("points").makeTwoWay(),
       $(go.Shape,  // the link path shape
         { isPanelMain: true, strokeWidth: 1 },
@@ -336,6 +369,7 @@ function init() {
           margin: 4,
           segmentIndex: 0,
           segmentFraction: 0.2,
+          // background: 'lightblue',
         },
         new go.Binding("text").makeTwoWay(),
         new go.Binding("segmentIndex").makeTwoWay(),
