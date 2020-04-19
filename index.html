@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SomtumMalakorSomtum</title>
+    <link rel = "stylesheet" type = "text/css" href = "somtum.css" >
+    
+    <!-- <script src="lib/go.js"></script> -->
+    <script src="lib/go.js"></script>
+    <script src="state.js"></script>
+    <script src="cilGoJs.js"></script>
+    
+    <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" /> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet"> -->
+</head>
+
+<body onload = init()>
+    <div class="header">
+        <h1>SomtumMalakorSomtum</h1>
+        <div class="line"></div>
+    </div>
+
+    <div class="container">
+          
+        <div class="container0">
+            <div class="dfa">
+                <!-- <img src="image/dfa.svg" class="dfaimg"> -->
+
+                <div id="myDiagramDiv" style="width: 100%; height: 100%;  background-color: #121212; "></div> 
+            </div>
+            <div class="outputstring">
+                <h1 class="ipst">Inputstring</h1>
+                <p id='inputstring' style="color: aliceblue; text-align: start; margin-left: 20px;"></p>
+            </div>
+        </div>
+
+
+        <div class="container2"> <!-- Menu and button input-->
+            <div class="outsomtum">
+                <h1 class="name">MENU</h1>
+                <div class="imgcontainer">
+                    <img id ="imgout" class="outsom" src="image/xxx.png">
+                </div>
+                <h2 id="name">ตำไทย</h2>
+                <div class="line2"></div>
+                <h1 class="name">เลือกส่วนผสม</h1>
+                <h1 class="name2">รสชาติ</h1>
+                
+                <div class="cc-selector">
+                    <input id="pednoi" type="radio" name="credit-card" value="pednoi" onclick="handleClick('เผ็ดน้อย')"/>
+                    <label class="drinkcard-cc visa" for="pednoi"></label>
+                    <input id="pedmak" type="radio" name="credit-card" value="pedmak" onclick="handleClick('เผ็ดมาก')"/>
+                    <label class="drinkcard-cc mastercard"for="pedmak"></label>
+                </div>
+
+                <h1 class="name2">ส่วนผสม</h1>
+                <div class="cc-selector2">
+                    <input id="pukem" type="radio" name="pukem" value="pukem" class="css_data_item" onclick="handleClick('ปูเค็ม')"/>
+                    <label class="drinkcard-cc2 pukem" for="pukem"></label>
+                    <input id="muyoo" type="radio" name="pukem" value="muyoo" class="css_data_item" onclick="handleClick('หมูยอ')"/>
+                    <label class="drinkcard-cc2 muyoo" for="muyoo"></label>
+                    <input id="kaikem" type="radio" name="pukem" value="kaikem" class="css_data_item" onclick="handleClick('ไข่เค็ม')"/>
+                    <label class="drinkcard-cc2 kaikem" for="kaikem"></label>
+                </div>
+                <h1 class="name3">Add-on</h1>
+                <div class="cc-selector3">
+                    <input id="plara" type="checkbox" name="plara" value="plara" onclick="handleClick('ปลาร้า')"/>
+                    <label class="drinkcard-cc2 plara" for="plara"></label>
+                </div>
+                <div class="cf">
+                    <button id='Confirm' class="button button--secondary" onclick="handleClick('Confirm')">
+                        <span class="button__inner">Comfirm</span>
+                    </button>
+                    <div class="space"></div>
+                    <button id='Reset' class="button button--reset" onclick="handleClick('Reset')">
+                        <span class="button__reset">Reset</span>
+                    </button>
+                    <div class="space2"></div>
+                    <button class="button button--restart" onclick="restart()">
+                        <span class="button__restart">Restart</span>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------------------------------------------------- -->
+    <div id="open-modal" class="modal-window">
+        <div>
+        <a onclick="init()" href="#" title="Close" class="modal-close">Close</a>
+        <div class="h1modal">DFA เครื่องทำส้มตำ  <img src="image/papaya.svg" style="width: 70px; height: 70px;"></div>
+        <div>เครื่อง SomtumMalakorSomtum เป็นเครื่องทำส้มตำของ <b>โขกโป๊ก resterant</b> โดยมีข้อจำกัดจากเชฟว่า ไม่อนุญาตให้มีเมนูใดจากภัตตาคารสุดหรูนี้ ถูกเสิร์ฟโดยที่ขาดส่วนผสมใด
+            หรือมีปริมาณของวัตถุดิบใดๆที่ผิดเพี้ยนไปจากสูตรต้นตำรับ ด้วยความอร่อยเลิศรสของอาหาร และความมั่นใจในฝีมือของเชฟนั้น โขกโป๊ก resterant จึงเล็งเห็นว่าเครื่องทำส้มตำนี้จะต้องเป็นประโยชน์
+            และนวัตกรรมต่อชาวโลก จึงได้ทำการสร้างการจำลองการทำงานของ Automata นี้ให้ทุกคนได้ลองศึกษากัน...👉👉👉
+        </div>
+    </div>
+
+    <script>
+        // window.onload = () => {
+        //     window.location.hash = 'open-modal'
+        // }
+    </script>
+    
+</body>
+</html>
