@@ -108,9 +108,7 @@ linkDataArray = [
   { "from": 12, "to": 10, "text": "เผ็ดน้อย", "points": [678, 250, 740, 240, 740, -20, 675, -40], "segmentIndex": 0, "segmentFraction": 0.5 },
   { "from": 12, "to": 11, "text": "ปูเค็ม", "points": [670, 215, 670, 165], "segmentIndex": 0, "segmentFraction": 0.5 },
   { "from": 12, "to": 12, "text": "\n\n\nเผ็ดมาก,\nหมูยอ,\nไข่เค็ม", "points": [660, 275, 660, 300, 690, 300, 690, 270, 666, 270,], "segmentIndex": 1, "segmentFraction": 0.5 },
-
-  { "from": 13, "to": 13, "text": "Confirm", "points":[846.3152294634547,1.0508336239820153,857.3338379449157,-44.50885321547814,916.9182704753139,5.025193104973333,872.2102290873377,23.306691833665568],"curviness":0, "segmentFraction": 1, "segmentIndex": 1,"curviness": 20 },
-  { "from": 13, "to": 14, "segmentFraction": 0.5, "segmentIndex": 2, "text": "\n\n\n\n\n\n\n\nเผ็ดน้อย,\nเผ็ดมาก,\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset" },
+  { "from": 13, "to": 14, "segmentFraction": 0.5, "segmentIndex": 2, "text": "\n\n\n\n\n\n\n\nเผ็ดน้อย,เผ็ดมาก,\nปูเค็ม,หมูยอ,\nไข่เค็ม,ปลาร้า,\nReset,confirm" },
 
   { "from": 14, "to": 14, "points": [1060, 80, 1060, 120, 1005, 120, 1005, 70,], "segmentIndex": 1, "segmentFraction": 0.5, "text": "\n\n\n\n\nเผ็ดน้อย,เผ็ดมาก,\nปูเค็ม,หมูยอ,\nไข่เค็ม,ปลาร้า,\nReset,Confirm" },
 
@@ -280,7 +278,7 @@ function init() {
         }),
       $(go.TextBlock,
         {
-          font: "'Quicksand', sans-serif", margin: 7, stroke: "rgba(0, 0, 0, .87)",
+          font: "Quicksand, sans-serif", margin: 7, stroke: "rgba(0, 0, 0, .87)",
         },
         new go.Binding("text").makeTwoWay())
     );
@@ -299,7 +297,7 @@ function init() {
         }),
       $(go.TextBlock, "Start",
         {
-          font: "bold 18pt TH SarabunPSK, bold arial, sans-serif",
+          font: "bold 13pt Quicksand, sans-serif",
           textAlign: "center",
           stroke: "black",
         },
@@ -349,7 +347,7 @@ function init() {
           return progress;
         }),
         new go.Binding('strokeWidth', 'bold', function(progress) {
-          return progress==true ? 3 :0.2;
+          return progress==true ? 3 :0.7;
         })
       ),
 
@@ -417,7 +415,7 @@ function init() {
 
 function restart() {
   document.getElementById('inputstring').innerHTML = ''
-  document.getElementById('name').innerHTML = 'ตำไทย'
+  document.getElementById('name').innerHTML = 'ตำอะไรเอ่ย'
   document.getElementById('imgout').src =  'image/' + imgmap['Start_state'] + '.png'
   machine.current_State = { name: 'Start_state', key: 0 }
   machine.prev_State = { name: 'none', key: -1 }
@@ -439,6 +437,7 @@ function restart() {
 }
 
 function handleClick(bottonName) {
+
   document.getElementById('inputstring').innerHTML += ' ' + bottonName
   // botton something
   let indx = mixer.indexOf(bottonName)
@@ -500,9 +499,53 @@ function handleClick(bottonName) {
     document.getElementById('imgout').src =  'image/' + imgmap[machine.current_State.name] + '.png'
   }
   if(machine.current_State.name == 'Start_state'){
-    document.getElementById('name').innerHTML = 'ตำไทย'
+    document.getElementById('name').innerHTML = 'ตำอะไรเอ่ย'
     document.getElementById('imgout').src =  'image/' + imgmap['Start_state'] + '.png'
   }
+  /*
+  .......##.......##.......##.......##.########....###.....#######.....########.########..####.########.########.########........##.......##.......##.......##.......##.......##
+  ......##.......##.......##.......##.....##......##.##...##.....##....##.......##.....##..##.....##....##.......##.....##......##.......##.......##.......##.......##.......##.
+  .....##.......##.......##.......##......##.....##...##..##.....##....##.......##.....##..##.....##....##.......##.....##.....##.......##.......##.......##.......##.......##..
+  ....##.......##.......##.......##.......##....##.....##.##.....##....######...##.....##..##.....##....######...##.....##....##.......##.......##.......##.......##.......##...
+  ...##.......##.......##.......##........##....#########.##.....##....##.......##.....##..##.....##....##.......##.....##...##.......##.......##.......##.......##.......##....
+  ..##.......##.......##.......##.........##....##.....##.##.....##....##.......##.....##..##.....##....##.......##.....##..##.......##.......##.......##.......##.......##.....
+  .##.......##.......##.......##..........##....##.....##..#######.....########.########..####....##....########.########..##.......##.......##.......##.......##.......##......
+  */
+  if(bottonName == 'Confirm'&& document.getElementById('name').innerHTML !="ตำอะไรเอ่ย"&& machine.current_State.name == "Confirm" ){
+    let timerInterval
+    Swal.fire({
+      title: 'ยินดีด้วย นี่คือเมนู'+document.getElementById('name').innerHTML+'ของคุณ!👍',
+      imageUrl: 'image/kp.png',
+      imageWidth: 250,
+      imageHeight: 250, 
+      imageAlt: 'Custom image', 
+      timerProgressBar: true,
+      timer:3000,
+      onBeforeOpen: () => {
+        Swal.showLoading()
+        timerInterval = setInterval(() => {
+          const content = Swal.getContent()
+          if (content) {
+            const b = content.querySelector('b')
+            if (b) {
+              b.textContent = Swal.getTimerLeft()
+            }
+          }
+        }, 100)
+      },
+      onClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('I was closed by the timer')
+      }
+    })
+
+  }
+
+
 }
 
 function resetPathColor(){
@@ -514,6 +557,9 @@ function resetPathColor(){
     }
   }
 }
+
+
+
 
 
 let Botton = {
