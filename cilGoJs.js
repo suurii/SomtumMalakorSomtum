@@ -29,7 +29,7 @@ nodeDataArray = [
 ];
 
 linkDataArray = [
-  { "from": 0, "to": 0, "points": [5, 60, -30, 60, -30, 100, 10, 100, 10, 65], "segmentIndex": 2, "segmentFraction": 0.5, "text": "\n\n\n\n\n\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset,\nConfirm" },
+  { "from": 0, "to": 0, "points": [5, 60, -30, 60, -30, 100, 10, 100, 10, 65], "segmentIndex": 2, "segmentFraction": 0.5, "text": "\n\n\n\nปูเค็ม,หมูยอ,\nไข่เค็ม,ปลาร้า,\nReset,Confirm" },
   { "from": 0, "to": 1, "text": "เผ็ดน้อย", "segmentIndex": 2, "segmentFraction": 0.4 },
   { "from": 0, "to": 2, "text": "เผ็ดมาก", "segmentIndex": 2, "segmentFraction": 0.4 },
 
@@ -67,21 +67,21 @@ linkDataArray = [
   { "from": 5, "to": 8, "text": "เผ็ดมาก", "points": [480, 0, 570, 0, 570, 300, 480, 300], "segmentIndex": 0, "segmentFraction": 0.25 },
 
   // //layer 2 down
-  { "from": 6, "to": 1, "text": "\nปูเค็ม", "points": [400, 100, 320, 100, 320, 130, 280, 130], "segmentIndex": 0, "segmentFraction": 0.3 },
+  { "from": 6, "to": 2, "text": "\nปูเค็ม", "points": [400, 100, 320, 100, 320, 130, 280, 130], "segmentIndex": 0, "segmentFraction": 0.3 },
   { "from": 6, "to": 3, "text": "เผ็ดน้อย", "points": [475, 70, 570, 70, 570, -230, 475, -230,], "segmentIndex": 0, "segmentFraction": 0.45 },
   { "from": 6, "to": 6, "points": [406, 70, 370, 70, 370, 50, 440, 50], "segmentIndex": 1, "segmentFraction": 0.5, "text": "เผ็ดมาก" },
   { "from": 6, "to": 7, "text": "หมูยอ", "points": [410, 115, 410, 165], "segmentIndex": 0, "segmentFraction": 0.3 },
   { "from": 6, "to": 8, "text": "ไข่เค็ม", "points": [480, 80, 550, 80, 550, 290, 480, 290], "segmentIndex": 0, "segmentFraction": 0.3 },
   { "from": 6, "to": 11, "text": "ปลาร้า", "points": [477, 110, 615, 120,], "segmentIndex": 0, "segmentFraction": 0.2 },
 
-  { "from": 7, "to": 1, "text": "\nหมูยอ", "points": [400, 200, 320, 200, 320, 130, 280, 130], "segmentIndex": 0, "segmentFraction": 0.3 },
+  { "from": 7, "to": 2, "text": "\nหมูยอ", "points": [400, 200, 320, 200, 320, 130, 280, 130], "segmentIndex": 0, "segmentFraction": 0.3 },
   { "from": 7, "to": 4, "text": "เผ็ดน้อย", "points": [480, 190, 570, 190, 570, -110, 480, -110,], "segmentIndex": 0, "segmentFraction": 0.25 },
   { "from": 7, "to": 6, "text": "ปูเค็ม", "points": [470, 165, 470, 115], "segmentIndex": 0, "segmentFraction": 0.5 },
   { "from": 7, "to": 7, "points": [406, 170, 370, 170, 370, 150, 440, 150], "segmentIndex": 1, "segmentFraction": 1, "text": "เผ็ดมาก" },
   { "from": 7, "to": 8, "text": "ไข่เค็ม", "points": [410, 215, 410, 265], "segmentIndex": 0, "segmentFraction": 0.3 },
   { "from": 7, "to": 12, "text": "ปลาร้า", "points": [477, 210, 615, 220,], "segmentIndex": 0, "segmentFraction": 0.2 },
 
-  { "from": 8, "to": 1, "text": "\nไข่เค็ม", "points": [400, 300, 320, 300, 320, 130, 280, 130], "segmentIndex": 0, "segmentFraction": 0.3 },
+  { "from": 8, "to": 2, "text": "\nไข่เค็ม", "points": [400, 300, 320, 300, 320, 130, 280, 130], "segmentIndex": 0, "segmentFraction": 0.3 },
   { "from": 8, "to": 5, "text": "เผ็ดน้อย", "points": [474, 310, 570, 310, 570, 10, 474, 10,], "segmentIndex": 0, "segmentFraction": 0.25 },
   { "from": 8, "to": 6, "text": "ปูเค็ม", "points": [480, 280, 540, 280, 540, 90, 480, 90], "segmentIndex": 0, "segmentFraction": 0.3 },
   { "from": 8, "to": 7, "text": "หมูยอ", "points": [470, 265, 470, 215], "segmentIndex": 0, "segmentFraction": 0.5 },
@@ -95,12 +95,12 @@ linkDataArray = [
 
   { "from": 10, "to": 4, "text": "ปลาร้า", "points": [615, -90, 475, -100], "segmentIndex": 0, "segmentFraction": 0.2 },
   { "from": 10, "to": 9, "text": "ปูเค็ม", "points": [670, -85, 670, -135], "segmentIndex": 0, "segmentFraction": 0.5 },
-  { "from": 10, "to": 10, "text": "\n\nเผ็ดน้อย,\nหมูยอ,\nไข่เค็ม", "points": [660, -25, 660, 0, 690, 0, 690, -30, 666, -30,], "segmentIndex": 1, "segmentFraction": 0.5 },
+  { "from": 10, "to": 10, "text": "\n\nเผ็ดน้อย,หมูยอ,\nไข่เค็ม", "points": [660, -25, 660, 0, 690, 0, 690, -30, 666, -30,], "segmentIndex": 1, "segmentFraction": 0.5 },
   { "from": 10, "to": 12, "text": "เผ็ดมาก", "points": [677, -50, 750, -30, 750, 250, 675, 260], "segmentIndex": 0, "segmentFraction": 0.5 },
 
   { "from": 11, "to": 6, "text": "ปลาร้า", "points": [615, 110, 477, 100], "segmentIndex": 0, "segmentFraction": 0.2 },
   { "from": 11, "to": 9, "text": "เผ็ดน้อย", "points": [680, 140, 760, 130, 760, -150, 680, -160], "segmentIndex": 0, "segmentFraction": 0.4 },
-  { "from": 11, "to": 11, "text": "เผ็ดมาก,\nปูเค็ม,\nไข่เค็ม\n\n", "points": [660, 105, 660, 80, 690, 80, 690, 110, 665, 110], "segmentIndex": 1, "segmentFraction": 0.5 },
+  { "from": 11, "to": 11, "text": "เผ็ดมาก,ปูเค็ม,\nไข่เค็ม\n\n", "points": [660, 105, 660, 80, 690, 80, 690, 110, 665, 110], "segmentIndex": 1, "segmentFraction": 0.5 },
   { "from": 11, "to": 12, "text": "หมูยอ", "points": [610, 165, 610, 215], "segmentIndex": 0, "segmentFraction": 0.5 },
 
   { "from": 12, "to": 7, "text": "ปลาร้า", "points": [615, 210, 477, 200], "segmentIndex": 0, "segmentFraction": 0.2 },
@@ -108,10 +108,10 @@ linkDataArray = [
   { "from": 12, "to": 11, "text": "ปูเค็ม", "points": [670, 215, 670, 165], "segmentIndex": 0, "segmentFraction": 0.5 },
   { "from": 12, "to": 12, "text": "\n\n\nเผ็ดมาก,\nหมูยอ,\nไข่เค็ม", "points": [660, 275, 660, 300, 690, 300, 690, 270, 666, 270,], "segmentIndex": 1, "segmentFraction": 0.5 },
 
-  { "from": 13, "to": 13, "text": "Confirm", "points": [880, 40, 880, 80, 840, 80], "segmentFraction": 1, "segmentIndex": 0 },
+  { "from": 13, "to": 13, "text": "Confirm", "points":[846.3152294634547,1.0508336239820153,857.3338379449157,-44.50885321547814,916.9182704753139,5.025193104973333,872.2102290873377,23.306691833665568],"curviness":0, "segmentFraction": 1, "segmentIndex": 1,"curviness": 20 },
   { "from": 13, "to": 14, "segmentFraction": 0.5, "segmentIndex": 2, "text": "\n\n\n\n\n\n\n\nเผ็ดน้อย,\nเผ็ดมาก,\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset" },
 
-  { "from": 14, "to": 14, "points": [1075, 60, 1075, 120, 1005, 120, 1005, 60,], "segmentIndex": 1, "segmentFraction": 0.5, "text": "\n\n\n\n\n\n\n\n\nเผ็ดน้อย,\nเผ็ดมาก,\nปูเค็ม,\nหมูยอ,\nไข่เค็ม,\nปลาร้า,\nReset,\nConfirm" },
+  { "from": 14, "to": 14, "points": [1060, 80, 1060, 120, 1005, 120, 1005, 70,], "segmentIndex": 1, "segmentFraction": 0.5, "text": "\n\n\n\n\nเผ็ดน้อย,เผ็ดมาก,\nปูเค็ม,หมูยอ,\nไข่เค็ม,ปลาร้า,\nReset,Confirm" },
 
   //Confirm
   { "from": 1, "to": 13, "text": "Confirm", "points": [240, -20, 350, 40, 800, 40], "segmentFraction": 0.4 },
@@ -223,7 +223,7 @@ function init() {
         // locationSpot: go.Spot.TopCenter,
         isShadowed: true, shadowBlur: 1,
         shadowOffset: new go.Point(0, 1),
-        shadowColor: "rgba(0, 0, 0, .14)"
+        shadowColor: "rgba(0, 0, 0, .14)"  //color of shadow
       },
       new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
       // define the node's outer shape, which will surround the TextBlock
@@ -238,7 +238,7 @@ function init() {
         }),
       $(go.TextBlock,
         {
-          font: "bold small-caps 11pt helvetica, bold arial, sans-serif", margin: 7, stroke: "rgba(0, 0, 0, .87)",
+          font: "'Quicksand', sans-serif", margin: 7, stroke: "rgba(0, 0, 0, .87)",
         },
         new go.Binding("text").makeTwoWay())
     );
@@ -248,7 +248,7 @@ function init() {
       new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
       $(go.Shape, "Circle",
         {
-          fill: "#52ce60", /* green */
+          fill: "#87FFBF", /* green */
           stroke: null,
           portId: "",
           fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
@@ -259,7 +259,7 @@ function init() {
         {
           font: "bold 18pt TH SarabunPSK, bold arial, sans-serif",
           textAlign: "center",
-          stroke: "whitesmoke",
+          stroke: "black",
         },
         new go.Binding("text").makeTwoWay()
       )
@@ -317,7 +317,8 @@ function init() {
       $(go.TextBlock, "transition",  // the label text
         {
           textAlign: "center",
-          font: "9pt helvetica, arial, sans-serif",
+          font: "9.7pt helvetica, arial, sans-serif",
+          // font: "15pt helvetica, arial, sans-serif",
           margin: 4,
           segmentIndex: 0,
           segmentFraction: 0.2,
@@ -355,6 +356,7 @@ function init() {
   myDiagram.isReadOnly = true;
 
   highlightNode(machine.current_State.key);
+  resetPathColor()
   
 }
 
@@ -364,18 +366,14 @@ function init() {
 function restart() {
   document.getElementById('inputstring').innerHTML = ''
   document.getElementById('name').innerHTML = 'ตำไทย'
-  document.getElementById('imgout').src =  'image/' + imgmap['Start_state']
+  document.getElementById('imgout').src =  'image/' + imgmap['Start_state'] + '.png'
   machine.current_State = { name: 'Start_state', key: 0 }
   machine.prev_State = { name: 'none', key: -1 }
   highlightNode(machine.current_State.key)
   for (let i = 0; i < bottonList.length; i++) {
     document.getElementById(bottonList[i]).checked = false
   }
-  for(let i = 0 ; i < 15 ;i++){
-    for(let j = 0 ; j < 15 ;j++){
-      highlightPath(i,j,'black','black')
-    }
-  }
+  resetPathColor()
   Botton.state = {
     เผ็ดน้อย: false,
     เผ็ดมาก: false,
@@ -419,7 +417,7 @@ function handleClick(bottonName) {
   let next = machine.getNext(bottonName)
 
   // highlight path from current state to next state
-  highlightPath(machine.current_State.key, next.key, 'blue', "red")
+  highlightPath(machine.current_State.key, next.key, '#E6E6E6', "#E6E6E6")
 
   // highlight next state
   highlightNode(next.key)
@@ -449,7 +447,16 @@ function handleClick(bottonName) {
   }
   if(machine.current_State.name == 'Start_state'){
     document.getElementById('name').innerHTML = 'ตำไทย'
-    document.getElementById('imgout').src =  'image/' + imgmap['Start_state']
+    document.getElementById('imgout').src =  'image/' + imgmap['Start_state'] + '.png'
+  }
+}
+
+function resetPathColor(){
+  for(let i = -1 ; i < 15 ;i++){
+    for(let j = 0 ; j < 15 ;j++){
+      // highlightPath(i,j,'#666666','#666666')
+      highlightPath(i,j,'black','black')
+    }
   }
 }
 
@@ -477,7 +484,7 @@ let Botton = {
   }
 }
 let imgmap = {
-  Start_state : '1TumThai',
+  Start_state : 'xxx',
   ตำไทย_เผ็ดมาก: '1TumThai',
   ตำไทย_เผ็ดน้อย: '1TumThai',
   ปูเค็ม_เผ็ดน้อย: 'Poo',

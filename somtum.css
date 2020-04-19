@@ -69,6 +69,224 @@ html,body{
     border-radius: 0 20px  20px  0;
 
 }
+
+@media only screen and (max-width: 1000px) {
+  .cc-selector2{
+    display:flex;
+    /* margin-left:8.5%; */
+    padding:0 7% 0 7%;
+    justify-content:center;
+  }
+   /* bt confirm starttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt */
+   @import url(https://fonts.googleapis.com/css?family=Dosis);
+   * {
+     box-sizing: border-box;
+  }
+   .button {
+     font-size: 5vw;
+     border: none;
+     background-color: #ebebf0;
+     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+     user-select: none;
+     position: relative;
+     z-index: 1;
+     padding: 0;
+ 
+  }
+   @media (min-width: 40em) {
+     .button {
+       font-size: 1.5em;
+    }
+  }
+  
+  .cf{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+  }
+   .button:before {
+     content: "";
+     position: absolute;
+     z-index: -1;
+     width: 10px;
+     right: 0;
+     top: 0;
+     bottom: 0;
+     background-color: rgba(0, 10, 50, 0.2);
+     transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
+     transform: translate3D(0, 0, 0);
+     border-radius: 10px;
+  }
+   .button:after {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #ebebf0;
+     z-index: -1;
+     border-radius: 10px;
+  }
+   .button:hover:before, .button:focus:before {
+     transform: translate3D(10px, 0, 0);
+  }
+   .button:active:before {
+     transform: translate3D(0, 0, 0);
+  }
+   .button:focus, .button:active {
+     outline: none;
+  }
+   .button .button__inner {
+     font-family: 'Quicksand', sans-serif;
+     
+     line-height: 1.5;
+     /* text-transform: uppercase; */
+     
+     /* font-weight: bold; */
+     letter-spacing: 0.1em;
+     color: white;
+     padding: 5px 65px;
+     background-color: #fbfbfb;
+     display: block;
+     width: 100%;
+     height: 100%;
+     transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
+     border-radius: 10px;
+     text-align: center;
+     display: inline-block;
+ 
+  }
+   .button:hover .button__inner, .button:focus .button__inner {
+     transform: translate3D(0, -10px, 0);
+  }
+   .button:active .button__inner {
+     transform: translate3D(0, 0, 0);
+  }
+   .button:hover .button__inner, .button:focus .button__inner {
+     background-color: #fff;
+  }
+   .button--secondary {
+     background-color: rgb(150, 5, 5);
+     z-index: 0;
+     border-radius: 10px;
+  }
+   .button--secondary:after {
+     background-color: rgb(150, 5, 5);
+     border-radius: 10px;
+  }
+   .button--secondary .button__inner {
+     background-color: #D61414;
+     border-radius: 10px;
+  }
+   .button--secondary:hover .button__inner, .button--secondary:focus .button__inner {
+     background-color: #D61414;
+     border-radius: 10px;
+  }
+ .space{
+   width:100%;
+   height: 15px;
+ }
+ .space2{
+   width:10px;
+   height: 0px;
+ }
+  /* bt confirm enddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd */
+ 
+  .button .button__reset {
+   text-transform: uppercase;
+   font-family: 'TH SarabunPSK';
+   font-weight: bold;
+   letter-spacing: 0.1em;
+   color: rgb(0, 0, 0);
+   padding: 7px 20px;
+   background-color: #fbfbfb;
+   display: block;
+   width: 100%;
+   height: 100%;
+   transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
+   position: relative;
+   border-radius: 10px;
+   text-align: center;
+   display: inline-block;
+ 
+ }
+ .button:hover .button__reset, .button:focus .button__reset {
+   transform: translate3D(0, -10px, 0);
+ }
+ .button:active .button__reset {
+   transform: translate3D(0, 0, 0);
+ }
+ .button:hover .button__reset, .button:focus .button__reset {
+   background-color: #fff;
+ }
+ .button--reset {
+   background-color: rgb(163, 163, 163);
+   z-index: 0;
+   border-radius: 10px;
+ }
+ .button--reset:after {
+   background-color: rgb(163, 163, 163);
+   border-radius: 10px;
+ }
+ .button--reset .button__reset {
+   background-color: #C4C4C4;
+   border-radius: 10px;
+ }
+ .button--reset:hover .button__reset, .button--reset:focus .button__reset {
+   background-color: #C4C4C4;
+   border-radius: 10px;
+ }
+ /* buttonreset enddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd */
+ 
+ .button .button__restart{
+   text-transform: uppercase;
+   font-family: 'TH SarabunPSK';
+   font-weight: bold;
+   letter-spacing: 0.1em;
+   color: rgb(0, 0, 0);
+   padding: 7px 7px;
+   background-color: #fbfbfb;
+   display: block;
+   width: 100%;
+   height: 100%;
+   transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
+   position: relative;
+   border-radius: 10px;
+   text-align: center;
+   display: inline-block;
+ 
+ }
+ .button:hover .button__restart, .button:focus .button__restart {
+   transform: translate3D(0, -10px, 0);
+ }
+ .button:active .button__restart {
+   transform: translate3D(0, 0, 0);
+ }
+ .button:hover .button__restart, .button:focus .button__restart {
+   background-color: #fff;
+ }
+ .button--restart {
+   background-color: rgb(163, 163, 163);
+   z-index: 0;
+   border-radius: 10px;
+ }
+ .button--restart:after {
+   background-color: rgb(163, 163, 163);
+   border-radius: 10px;
+ }
+ .button--restart .button__restart {
+   background-color: #C4C4C4;
+   border-radius: 10px;
+ }
+ .button--restart:hover .button__restart, .button--restart:focus .button__restart {
+   background-color: #C4C4C4;
+   border-radius: 10px;
+ 
+ }
+ /* button restart enddddddddddddddddddddddddddddddddddddddddddddddddddddddd */
+  }
 .name{
     text-align: start;
     padding-left: 30px;
