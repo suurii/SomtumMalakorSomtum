@@ -1,5 +1,6 @@
 
 var now = 0;
+// var oldfrom = 0,oldTo = 0;
 nodeDataArray = [
   { "key": -1, "loc": "-75 25" },
 
@@ -140,7 +141,7 @@ linkDataArray = [
   { "from": 9, "to": 0, "text": "Reset", "points": [640, -200, 640, -270, 40, -270, 40, 0,] },
   { "from": 10, "to": 0, "text": "Reset", "points": [680, -60, 710, -100, 710, -270, 40, -270, 40, 0,], "segmentFraction": 0.7 },
   { "from": 11, "to": 0, "text": "Reset", "points": [680, 140, 710, 180, 710, 350, 40, 350, 40, 80,], "segmentFraction": 0.7 },
-  { "from": 12, "to": 0, "text": "Reset", "points": [640, 280, 640, 350, 40, 350, 40, 80,], "routing": "Orthogonal", "segmentIndex": 0, "segmentFraction": 0.2 },
+  { "from": 12, "to": 0, "text": "Reset", "points": [640, 280, 640, 350, 40, 350, 40, 80,] , "segmentIndex": 0, "segmentFraction": 0.2 },
 
 ];
 
@@ -179,7 +180,16 @@ function highlightPath(from, to, colorPath, colorText) {
       // console.log(p);
       myDiagram.model.set(p, 'colorPath', colorPath);
       myDiagram.model.set(p, 'colorText', colorText);
-      break;
+      myDiagram.model.set(p, 'bold', true);
+      // break;
+    }
+    else if(p.from == to){
+      myDiagram.model.set(p, 'colorPath', colorText);
+      myDiagram.model.set(p, 'colorText', colorPath);
+      myDiagram.model.set(p, 'bold', true);
+      }
+    else{
+      myDiagram.model.set(p, 'bold', false);
     }
   }
 }
@@ -293,7 +303,7 @@ function init() {
     $(go.Link,  // the whole link panel
       { relinkableFrom: true, relinkableTo: true, reshapable: true, resegmentable: true },
       {
-        routing: go.Link.AvoidsNodes,  // but this is changed to go.Link.Orthgonal when the Link is reshaped
+        routing: go.Link.AvoidsNodes,
         adjusting: go.Link.End,
         curve: go.Link.JumpOver,
         corner: 5,
@@ -304,15 +314,18 @@ function init() {
         new go.Binding('stroke', 'colorPath', function (progress) {
           return progress;
         }),
-        // new go.Binding('strokeWidth', 'colorPath', function(progress) {
-        //   return progress==true ? 2.5 : 1.5;
-        // })
+        new go.Binding('strokeWidth', 'bold', function(progress) {
+          return progress==true ? 3 : 1.5;
+        })
       ),
 
       $(go.Shape,  // the arrowhead
         { toArrow: "Standard", stroke: null },
         new go.Binding('fill', 'colorPath', function (progress) {
           return progress;
+        }),
+        new go.Binding('scale', 'bold', function (progress) {
+          return progress==true ? 2 : 1;
         })),
       $(go.TextBlock, "transition",  // the label text
         {
