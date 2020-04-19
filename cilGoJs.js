@@ -175,6 +175,7 @@ function highlightNode(nodeId) {
 // ex. highlightPath(0,1,'blue','red')
 // if want smth more , contact CXZ na ja 
 function highlightPath(from, to, colorPath, colorText) {
+  
   for (p of myDiagram.model.linkDataArray) {
     if (p.from == from && p.to == to) {
       // console.log(p);
@@ -258,7 +259,7 @@ function init() {
       new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
       $(go.Shape, "Circle",
         {
-          fill: "#87FFBF", /* green */
+          fill: "#dbd8e3", /* green */
           stroke: null,
           portId: "",
           fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
@@ -282,7 +283,7 @@ function init() {
       new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
       $(go.Shape, "Circle",
         {
-          fill: "maroon",
+          fill: "#17b794",
           stroke: null,
           portId: "",
           fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
@@ -301,7 +302,7 @@ function init() {
 
   myDiagram.linkTemplate =
     $(go.Link,  // the whole link panel
-      { relinkableFrom: true, relinkableTo: true, reshapable: true, resegmentable: true },
+      { relinkableFrom: true, relinkableTo: true, reshapable: true, resegmentable: true,layerName: "Background" },
       {
         routing: go.Link.AvoidsNodes,
         adjusting: go.Link.End,
@@ -315,7 +316,7 @@ function init() {
           return progress;
         }),
         new go.Binding('strokeWidth', 'bold', function(progress) {
-          return progress==true ? 3 : 1.5;
+          return progress==true ? 3 :0.2;
         })
       ),
 
@@ -357,7 +358,7 @@ function init() {
       },
       $(go.Shape, "Ellipse",
         {
-          fill: $(go.Brush, "Radial", { 0.5: "yellow", 1.0: "rgba(0, 0, 0, 0)" }),
+          fill: $(go.Brush, "Radial", { 0.5: "#ff004d", 1.0: "rgba(0, 0, 0, 0)" }),
           stroke: null,
           desiredSize: new go.Size(150, 150)
         })
@@ -372,6 +373,10 @@ function init() {
   resetPathColor()
   
 }
+
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////
 ///////////////////// frame edit ////////////////////////////////
@@ -421,7 +426,9 @@ function handleClick(bottonName) {
   machine.input_String.push(bottonName)
 
   // clear highlight path 
-  highlightPath(machine.prev_State.key, machine.current_State.key, 'black', 'black')
+
+  highlightPath(machine.prev_State.key, machine.current_State.key, '#cccccc', '#cccccc')
+
 
   //set prev state
   machine.prev_State = machine.current_State
@@ -430,7 +437,7 @@ function handleClick(bottonName) {
   let next = machine.getNext(bottonName)
 
   // highlight path from current state to next state
-  highlightPath(machine.current_State.key, next.key, '#E6E6E6', "#E6E6E6")
+  highlightPath(machine.current_State.key, next.key, '#f30a49', "#5fb9b0")
 
   // highlight next state
   highlightNode(next.key)
@@ -465,10 +472,11 @@ function handleClick(bottonName) {
 }
 
 function resetPathColor(){
-  for(let i = -1 ; i < 15 ;i++){
+  for(let i = 0 ; i < 15 ;i++){
     for(let j = 0 ; j < 15 ;j++){
       // highlightPath(i,j,'#666666','#666666')
-      highlightPath(i,j,'black','black')
+      highlightPath(i,j,'#cccccc','#cccccc')
+      highlightPath(-1,-1,'#f30a49','#f30a49')
     }
   }
 }

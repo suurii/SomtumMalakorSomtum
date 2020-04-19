@@ -11,15 +11,25 @@
     <script src="state.js"></script>
     <script src="cilGoJs.js"></script>
     
-    <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" /> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
 </head>
 
-<body onload = init()>
+<body >
     <div class="header">
-        <h1>SomtumMalakorSomtum</h1>
-        <div class="line"></div>
+        <div class="panel" id="js-panel">
+            
+            <div class="panel__flaps">
+              <div class="flap outer flap--left"></div>
+              <a class="flap flap__btn" href="#">SomtumMalakorSomtum</a>
+        
+              <div class="flap outer flap--right"></div>
+            </div>
+          </div>
+          <a class="replay" href="#" id="js-replay">
+            ❤️60010878 นางสาวลลิดา ตันสุวรรณวงค์  ❤️ 60010933 นายวิชิตชัย บัวทอง   ❤️60010980 นางสาวศิริรัตน์ ศรีวรรธนะ ❤️60011087 นายสุทธิพงษ์ แสงสว่าง ❤️60011112 นางสาวสุริยา อรรถเสยโย 
+          </a>
     </div>
 
     <div class="container">
@@ -31,8 +41,8 @@
                 <div id="myDiagramDiv" style="width: 100%; height: 100%;  background-color: #121212; "></div> 
             </div>
             <div class="outputstring">
-                <h1 class="ipst">Inputstring</h1>
-                <p id='inputstring' style="color: aliceblue; text-align: start; margin-left: 20px;"></p>
+                <h1 class="name4">👋Input string <em>(from input button)</em></h1>
+                <p id='inputstring'></p>
             </div>
         </div>
 
@@ -89,15 +99,60 @@
     <!-- --------------------------------------------------------------------------- -->
     <div id="open-modal" class="modal-window">
         <div>
-        <a onclick="init()" href="#" title="Close" class="modal-close">Close</a>
+        <a onclick="init2()" href="#" title="Close" class="modal-close">Close</a>
         <div class="h1modal">DFA เครื่องทำส้มตำ  <img src="image/papaya.svg" style="width: 70px; height: 70px;"></div>
         <div>เครื่อง SomtumMalakorSomtum เป็นเครื่องทำส้มตำของ <b>โขกโป๊ก resterant</b> โดยมีข้อจำกัดจากเชฟว่า ไม่อนุญาตให้มีเมนูใดจากภัตตาคารสุดหรูนี้ ถูกเสิร์ฟโดยที่ขาดส่วนผสมใด
             หรือมีปริมาณของวัตถุดิบใดๆที่ผิดเพี้ยนไปจากสูตรต้นตำรับ ด้วยความอร่อยเลิศรสของอาหาร และความมั่นใจในฝีมือของเชฟนั้น โขกโป๊ก resterant จึงเล็งเห็นว่าเครื่องทำส้มตำนี้จะต้องเป็นประโยชน์
-            และนวัตกรรมต่อชาวโลก จึงได้ทำการสร้างการจำลองการทำงานของ Automata นี้ให้ทุกคนได้ลองศึกษากัน...👉👉👉
+            และนวัตกรรมต่อชาวโลก จึงได้ทำการสร้างการจำลองการทำงานของ Automata นี้ให้ทุกคนได้ลองศึกษากัน...👉<br><br>
+            <em>❤️ ปล.รายชื่อสมาชิกกดดูได้ที่Bannerร้านค่ะ/ครับ</em>
+            
         </div>
     </div>
 
     <script>
+        (function() {
+            // Variables
+            var panel     = document.getElementById("js-panel");
+            var btns      = document.querySelectorAll(".flap__btn");
+            var btnReplay = document.getElementById("js-replay");
+            
+            // On load, init panel
+            var init2 = function() {
+                panel.classList.add("is--open");
+                
+                // If btns are clicked, hide panel
+                // Show replay button    
+                for (var i=0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                    hidePanel();
+                });
+                }
+                
+                function hidePanel() {
+                panel.classList.remove("is--open");
+                btnReplay.classList.add("is--active");
+                }
+                
+                // When replay button is clicked,
+                // reset the stage.
+                btnReplay.addEventListener("click", function() {
+                resetStage();
+                });
+                }
+                
+                // Hide the button and re-call init
+                function resetStage() {
+                    btnReplay.classList.remove("is--active");
+                    init2();
+                }
+                
+                // On load, call init function
+                window.onload = function() {
+                    window.location.hash = 'open-modal';
+                    init2();
+                    init();
+                }
+        })();
         // window.onload = () => {
         //     window.location.hash = 'open-modal'
         // }
