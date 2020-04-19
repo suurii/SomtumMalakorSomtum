@@ -307,7 +307,9 @@ function init() {
         adjusting: go.Link.End,
         curve: go.Link.JumpOver,
         corner: 5,
+        opacity: 1.0
       },
+      new go.Binding("opacity").makeTwoWay(),
       new go.Binding("points").makeTwoWay(),
       $(go.Shape,  // the link path shape
         { isPanelMain: true, strokeWidth: 1 },
@@ -335,6 +337,7 @@ function init() {
           margin: 4,
           segmentIndex: 0,
           segmentFraction: 0.2,
+          // background: 'lightblue',
         },
         new go.Binding("text").makeTwoWay(),
         new go.Binding("segmentIndex").makeTwoWay(),
