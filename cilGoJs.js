@@ -508,7 +508,9 @@ function handleClick(bottonName) {
       document.getElementById(Botton.map[mixer[i]]).checked = false
       Botton.state[mixer[i]] = false
     }
-  }
+  }  
+
+  
 
   if (next.name == 'Start_state') {
     document.getElementById('pednoi').checked = false
@@ -516,8 +518,12 @@ function handleClick(bottonName) {
     document.getElementById('pedmak').checked = false
     Botton.state['เผ็ดมาก'] = false
   }
+
+
   // set current state = next state
   machine.setCurrentState(next)
+
+
   if(['Confirm','Trap_state'].indexOf(machine.current_State.name) < 0){
     document.getElementById('name').innerHTML = machine.current_State.name.split('_').join('')
     document.getElementById('imgout').src =  'image/' + imgmap[machine.current_State.name] + '.png'
@@ -526,6 +532,10 @@ function handleClick(bottonName) {
     document.getElementById('name').innerHTML = 'ตำอะไรเอ่ย'
     document.getElementById('imgout').src =  'image/' + imgmap['Start_state'] + '.png'
   }
+
+  saveKaikemPlara()
+
+
   /*
   .......##.......##.......##.......##.########....###.....#######.....########.########..####.########.########.########........##.......##.......##.......##.......##.......##
   ......##.......##.......##.......##.....##......##.##...##.....##....##.......##.....##..##.....##....##.......##.....##......##.......##.......##.......##.......##.......##.
@@ -582,7 +592,21 @@ function resetPathColor(){
   }
 }
 
-
+function saveKaikemPlara()
+{
+  if(machine.current_State.name.indexOf('ไข่') < 0){
+    document.getElementById('kaikem').checked = false
+    Botton.state['ไข่เค็ม'] = false
+    if(machine.current_State.name.indexOf('pukem') >= 0){
+      document.getElementById('kaikem').checked = true
+      Botton.state['ปูเค็ม'] = true
+    }
+    else if(machine.current_State.name.indexOf('หมู') >= 0){
+      document.getElementById('muyoo').checked = true
+      Botton.state['หมูยอ'] = true
+    }
+  }
+}
 
 
 
@@ -608,6 +632,8 @@ let Botton = {
     Reset: false,
   }
 }
+
+
 let imgmap = {
   Start_state : 'xxx',
   ตำไทย_เผ็ดมาก: '1TumThai',
@@ -630,4 +656,6 @@ let lfc1 = ['Start_state', 'ตำไทย_เผ็ดน้อย', 'ตำ�
   , 'ไข่เค็ม_เผ็ดน้อย', 'ปูเค็ม_เผ็ดมาก', 'หมูยอ_เผ็ดมาก', 'ไข่เค็ม_เผ็ดมาก'] // listForClearActiveBotton
 
 let lfc2 = ['Start_state', 'ตำไทย_เผ็ดน้อย', 'ตำไทย_เผ็ดมาก'] // same
+let lfc3 = []
+
 let bottonList = ['pednoi','pedmak','pukem','muyoo','kaikem','plara']
