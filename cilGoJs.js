@@ -385,7 +385,7 @@ function init() {
       $(go.TextBlock, "transition",  // the label text
         {
           textAlign: "center",
-          font: "14pt TH SarabunPSK, arial, sans-serif",
+          font: "bold 14pt TH SarabunPSK, arial, sans-serif",
           // font: "15pt helvetica, arial, sans-serif",
           margin: 4,
           segmentIndex: 0,
