@@ -533,6 +533,8 @@ function handleClick(bottonName) {
     document.getElementById('imgout').src =  'image/' + imgmap['Start_state'] + '.png'
   }
 
+
+  console.log(machine.current_State.name)
   saveKaikemPlara()
 
 
@@ -597,8 +599,8 @@ function saveKaikemPlara()
   if(machine.current_State.name.indexOf('ไข่') < 0){
     document.getElementById('kaikem').checked = false
     Botton.state['ไข่เค็ม'] = false
-    if(machine.current_State.name.indexOf('pukem') >= 0){
-      document.getElementById('kaikem').checked = true
+    if(machine.current_State.name.indexOf('ปู') >= 0){
+      document.getElementById('pukem').checked = true
       Botton.state['ปูเค็ม'] = true
     }
     else if(machine.current_State.name.indexOf('หมู') >= 0){
