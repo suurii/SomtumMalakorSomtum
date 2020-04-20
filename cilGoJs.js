@@ -427,6 +427,7 @@ function init() {
 
   highlightNode(machine.current_State.key);
   resetPathColor()
+  highlightPath(-1,0, '#f30a49', "#F08080",'#17b794', "#40E0D0");
   
 }
 
@@ -448,6 +449,7 @@ function restart() {
     document.getElementById(bottonList[i]).checked = false
   }
   resetPathColor()
+  highlightPath(-1,0, '#f30a49', "#F08080",'#17b794', "#40E0D0");
   Botton.state = {
     เผ็ดน้อย: false,
     เผ็ดมาก: false,
@@ -495,7 +497,7 @@ function handleClick(bottonName) {
 
   // highlight path from current state to next state
   highlightPath(machine.current_State.key, next.key, '#f30a49', "#F08080",'#17b794', "#40E0D0")
-
+  
   // highlight next state
   highlightNode(next.key)
 
