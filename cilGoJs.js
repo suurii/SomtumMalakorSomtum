@@ -297,7 +297,7 @@ function init() {
         }),
       $(go.TextBlock, "Start",
         {
-          font: "bold 19pt TH SarabunPSK, sans-serif",
+          font: "bold 13pt Bai Jamjuree, sans-serif",
           textAlign: "center",
           stroke: "black",
         },
@@ -385,7 +385,7 @@ function init() {
       $(go.TextBlock, "transition",  // the label text
         {
           textAlign: "center",
-          font: "bold 14pt TH SarabunPSK, arial, sans-serif",
+          font: "bold 9.9pt Bai Jamjuree, arial, sans-serif",
           // font: "15pt helvetica, arial, sans-serif",
           margin: 4,
           segmentIndex: 0,
@@ -538,9 +538,9 @@ function handleClick(bottonName) {
   if(bottonName == 'Confirm'&& document.getElementById('name').innerHTML !="ตำอะไรเอ่ย"&& machine.current_State.name == "Confirm" ){
     let timerInterval
     Swal.fire({
-      title: 'ยินดีด้วย นี่คือเมนู'+document.getElementById('name').innerHTML+'ของคุณ!👍',
+      title: 'เมนูของคุณ'+' '+document.getElementById('name').innerHTML+'!👍',
       imageUrl: 'image/papaya.svg',
-      imageWidth: 150,
+      imageWidth: 160,
       imageHeight: 130, 
       imageAlt: 'Custom image', 
       timerProgressBar: true,
