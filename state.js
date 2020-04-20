@@ -173,7 +173,7 @@ let machine = {
             หมูยอ : 'Trap_state',
             ไข่เค็ม : 'Trap_state',
             ปลาร้า : 'Trap_state',
-            Confirm : 'Confirm',
+            Confirm : 'Trap_state',
             Reset : 'Trap_state',
             key : 13
         },
