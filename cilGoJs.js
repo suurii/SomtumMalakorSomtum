@@ -4,7 +4,7 @@ var oldFrom = -1,oldTo = 0,toggleOpacity=0;
 nodeDataArray = [
   { "key": -1, "loc": "-75 28" },
 
-  { "key": 0, "loc": "0 0", "text": "Start\nstate", "category": "Start" },
+  { "key": 0, "loc": "0 0", "text": "Start\nstate", "category": "rStart" },
 
   { "key": 1, "loc": "200 -100", "text": "ตำไทย\nเผ็ดน้อย", "category": "Start" },
   { "key": 2, "loc": "200 100", "text": "ตำไทย\nเผ็ดมาก", "category": "Start" },
@@ -108,7 +108,7 @@ linkDataArray = [
   { "from": 12, "to": 10, "text": "เผ็ดน้อย", "points": [678, 250, 740, 240, 740, -20, 675, -40], "segmentIndex": 0, "segmentFraction": 0.5 },
   { "from": 12, "to": 11, "text": "ปูเค็ม", "points": [670, 215, 670, 165], "segmentIndex": 0, "segmentFraction": 0.5 },
   { "from": 12, "to": 12, "text": "\n\n\nเผ็ดมาก,\nหมูยอ,\nไข่เค็ม", "points": [660, 275, 660, 300, 690, 300, 690, 270, 666, 270,], "segmentIndex": 1, "segmentFraction": 0.5 },
-  { "from": 13, "to": 14, "segmentFraction": 0.5, "segmentIndex": 2, "text": "\n\n\n\n\n\n\n\nเผ็ดน้อย,เผ็ดมาก,\nปูเค็ม,หมูยอ,\nไข่เค็ม,ปลาร้า,\nReset,confirm" },
+  { "from": 13, "to": 14, "segmentFraction": 0.5, "segmentIndex": 2, "text": "\n\n\n\n\nเผ็ดน้อย,เผ็ดมาก,\nปูเค็ม,หมูยอ,\nไข่เค็ม,ปลาร้า,\nReset,confirm" },
 
   { "from": 14, "to": 14, "points": [1060, 80, 1060, 120, 1005, 120, 1005, 70,], "segmentIndex": 1, "segmentFraction": 0.5, "text": "\n\n\n\n\nเผ็ดน้อย,เผ็ดมาก,\nปูเค็ม,หมูยอ,\nไข่เค็ม,ปลาร้า,\nReset,Confirm" },
 
@@ -288,7 +288,7 @@ function init() {
       new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
       $(go.Shape, "Circle",
         {
-          fill: "#dbd8e3", /* green */
+          fill: "#f0ece2", /* green */
           stroke: null,
           portId: "",
           fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
@@ -300,6 +300,29 @@ function init() {
           font: "bold 13pt Quicksand, sans-serif",
           textAlign: "center",
           stroke: "black",
+        },
+        new go.Binding("text").makeTwoWay()
+      )
+
+    )
+  );
+  myDiagram.nodeTemplateMap.add("rStart",
+    $(go.Node, "Spot", { desiredSize: new go.Size(80, 80) },
+      new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
+      $(go.Shape, "Circle",
+        {
+          fill: "#ff6768", /* green */
+          stroke: null,
+          portId: "",
+          fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
+          toLinkable: true, toLinkableSelfNode: true, toLinkableDuplicates: true,
+          // cursor: "pointer",
+        }),
+      $(go.TextBlock, "Start",
+        {
+          font: "bold 14pt Quicksand, sans-serif",
+          textAlign: "center",
+          stroke: "white",
         },
         new go.Binding("text").makeTwoWay()
       )
@@ -322,7 +345,7 @@ function init() {
       $(go.Shape, "Circle", { fill: null, desiredSize: new go.Size(70, 70), strokeWidth: 2, stroke: "whitesmoke" }),
       $(go.TextBlock, "Confirm",
         {
-          font: "bold 18pt TH SarabunPSK, bold arial, sans-serif",
+          font: "bold 13pt Quicksand, sans-serif",
           stroke: "whitesmoke"
         },
         new go.Binding("text").makeTwoWay())
