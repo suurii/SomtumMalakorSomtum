@@ -540,9 +540,22 @@
   background: #00d9ff;
   }
 
+  .contentmodal{
+    text-align: center;
+  }
+  .modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  }
+  .contentmodal0{
+    text-align:start;
+    margin-left:2%;
+  }
+
   .h1modal{
   font-family: 'Pattaya', sans-serif;
-  font-size: 45px;
+  font-size: 40px;
   color: rgb(41, 41, 41);
   text-align: center;
 
@@ -552,7 +565,7 @@
   }
   .modal-window {
   font-family: 'Quicksand', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   position: fixed;
   background-image: linear-gradient(to right,#000000 0,#2D3436 100%);
   top: 0;
@@ -571,7 +584,7 @@
   pointer-events: auto;
   }
   .modal-window > div {
-  width: 75%;
+  width: 85%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1408,54 +1421,7 @@ em{
 .......########..####.##.....##.########..#######...######..
 */
   /*----------------------------------------------------------- Model Dialoggggggggggggggggggggggggggg------------------------------------------------------------------------*/
-  .modalDialog {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 99999;
-  opacity: 0;
-  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;
-  pointer-events: none;
-  }
-  .modalDialog:target {
-  opacity: 1;
-  pointer-events: auto;
-  }
-  .modalDialog > div {
-  width: 400px;
-  position: relative;
-  margin: 10% auto;
-  padding: 5px 20px 13px 20px;
-  border-radius: 10px;
-  background: #fff;
-  background: #339999;
-  }
-  .close {
-  background: #606061;
-  color: #FFFFFF;
-  line-height: 25px;
-  position: absolute;
-  right: -12px;
-  text-align: center;
-  top: -10px;
-  width: 24px;
-  text-decoration: none;
-  font-weight: bold;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  -moz-box-shadow: 1px 1px 3px #000;
-  -webkit-box-shadow: 1px 1px 3px #000;
-  box-shadow: 1px 1px 3px #000;
-  }
-  .close:hover {
-  background: #00d9ff;
-  }
-
+  
   .h1modal{
   font-family: 'Pattaya', sans-serif;
   font-size: 50px;
@@ -1485,8 +1451,12 @@ em{
   opacity: 1;
   pointer-events: auto;
   }
+  .contentmodal0{
+    text-align:start;
+    margin-left:20%;
+  }
   .modal-window > div {
-  width: 40%;
+  width: 80%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1526,73 +1496,7 @@ em{
   .modal-window div:not(:last-of-type) {
   margin-bottom: 15px;
   }
-  small {
-  color: #aaa;
-  }
-  .btn {
-  background-color: #fff;
-  padding: 1em 1.5em;
-  border-radius: 3px;
-  text-decoration: none;
-  }
-  .btn i {
-  padding-right: 0.3em;
-  }
 
-
-  ul {
-    display: inline-grid;
-    grid-auto-flow: row;
-    grid-gap: 20px;
-    justify-items: center;
-    margin: auto;
-  }
-  
-  ul {
-    
-      grid-auto-flow: column;
-    }
-  
-  a {
-    font-size: 10px;
-    color: white;
-    text-decoration: none;
-    box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
-  }
-  
-  a:hover {
-    box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
-  }
-  
-  li:last-child {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-  
-  li:hover ~ li:last-child {
-    animation: wave-animation 0.3s infinite;
-  }
-  
-  /* below is just for demo styling */
-  
-  .footer {
-    display: flex;
-
-    font-family: Menlo, monospace;
-  }
-  
-  @keyframes wave-animation {
-    0%,
-    100% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(20deg);
-    }
-    75% {
-      transform: rotate(-15deg);
-    }
-  }
 /*
 .########.....###....##....##.########.##......
 .##.....##...##.##...###...##.##.......##......
@@ -1810,6 +1714,15 @@ em{
     background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
  }
 }
+/*
+................................................................................
+................................................................................
+................................................................................
+.#######.#######.#######.#######.#######.#######.#######.#######.#######.#######
+................................................................................
+................................................................................
+................................................................................
+*/
 
 
 
@@ -2323,54 +2236,18 @@ em{
 .......########..####.##.....##.########..#######...######..
 */
   /*----------------------------------------------------------- Model Dialoggggggggggggggggggggggggggg------------------------------------------------------------------------*/
-  .modalDialog {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 99999;
-  opacity: 0;
-  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;
-  pointer-events: none;
+  .contentmodal{
+    text-align: center;
   }
-  .modalDialog:target {
+  .modal-window:target {
+  visibility: visible;
   opacity: 1;
   pointer-events: auto;
   }
-  .modalDialog > div {
-  width: 400px;
-  position: relative;
-  margin: 10% auto;
-  padding: 5px 20px 13px 20px;
-  border-radius: 10px;
-  background: #fff;
-  background: #339999;
+  .contentmodal0{
+    text-align:start;
+    margin-left:20%;
   }
-  .close {
-  background: #606061;
-  color: #FFFFFF;
-  line-height: 25px;
-  position: absolute;
-  right: -12px;
-  text-align: center;
-  top: -10px;
-  width: 24px;
-  text-decoration: none;
-  font-weight: bold;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  -moz-box-shadow: 1px 1px 3px #000;
-  -webkit-box-shadow: 1px 1px 3px #000;
-  box-shadow: 1px 1px 3px #000;
-  }
-  .close:hover {
-  background: #00d9ff;
-  }
-
   .h1modal{
   font-family: 'Pattaya', sans-serif;
   font-size: 60px;
@@ -2393,13 +2270,9 @@ em{
   pointer-events: none;
   transition: all 0.3s;
   }
-  .modal-window:target {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  }
+
   .modal-window > div {
-  width: 50%;
+  width: 70%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2439,60 +2312,7 @@ em{
   .modal-window div:not(:last-of-type) {
   margin-bottom: 15px;
   }
-  small {
-  color: #aaa;
-  }
-  .btn {
-  background-color: #fff;
-  padding: 1em 1.5em;
-  border-radius: 3px;
-  text-decoration: none;
-  }
-  .btn i {
-  padding-right: 0.3em;
-  }
 
-
-  ul {
-    display: inline-grid;
-    grid-auto-flow: row;
-    grid-gap: 20px;
-    justify-items: center;
-    margin: auto;
-  }
-  
-  ul {
-    
-      grid-auto-flow: column;
-    }
-  
-  a {
-    font-size: 10px;
-    color: white;
-    text-decoration: none;
-    box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
-  }
-  
-  a:hover {
-    box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
-  }
-  
-  li:last-child {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-  
-  li:hover ~ li:last-child {
-    animation: wave-animation 0.3s infinite;
-  }
-  
-  /* below is just for demo styling */
-  
-  .footer {
-    display: flex;
-
-    font-family: Menlo, monospace;
-  }
   
   @keyframes wave-animation {
     0%,
