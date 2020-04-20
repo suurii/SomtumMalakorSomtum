@@ -547,6 +547,9 @@
   text-align: center;
 
   }
+  .contentmodal{
+    text-align: center;
+  }
   .modal-window {
   font-family: 'Quicksand', sans-serif;
   font-size: 16px;
@@ -1455,14 +1458,13 @@ em{
 
   .h1modal{
   font-family: 'Pattaya', sans-serif;
-  font-size: 60px;
+  font-size: 50px;
   color: rgb(41, 41, 41);
   text-align: center;
-
   }
   .modal-window {
   font-family: 'Quicksand', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   position: fixed;
   background-image: linear-gradient(to right,#000000 0,#2D3436 100%);
   top: 0;
@@ -1475,13 +1477,16 @@ em{
   pointer-events: none;
   transition: all 0.3s;
   }
+  .contentmodal{
+    text-align: center;
+  }
   .modal-window:target {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
   }
   .modal-window > div {
-  width: 50%;
+  width: 40%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1681,7 +1686,8 @@ em{
 	}
 }
 em{
-  font-size:18px;
+  
+  font-size:16px;
   color: rgb(134, 134, 134);
 }
  .replay {
