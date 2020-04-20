@@ -297,7 +297,7 @@ function init() {
         }),
       $(go.TextBlock, "Start",
         {
-          font: "bold 13pt Quicksand, sans-serif",
+          font: "bold 19pt TH SarabunPSK, sans-serif",
           textAlign: "center",
           stroke: "black",
         },
@@ -370,7 +370,7 @@ function init() {
           return progress;
         }),
         new go.Binding('strokeWidth', 'bold', function(progress) {
-          return progress==true ? 3 :0.7;
+          return progress==true ? 4 :0.7;
         })
       ),
 
@@ -385,7 +385,7 @@ function init() {
       $(go.TextBlock, "transition",  // the label text
         {
           textAlign: "center",
-          font: "9.7pt helvetica, arial, sans-serif",
+          font: "14pt TH SarabunPSK, arial, sans-serif",
           // font: "15pt helvetica, arial, sans-serif",
           margin: 4,
           segmentIndex: 0,
@@ -493,7 +493,7 @@ function handleClick(bottonName) {
   let next = machine.getNext(bottonName)
 
   // highlight path from current state to next state
-  highlightPath(machine.current_State.key, next.key, '#f30a49', "#5fb9b0")
+  highlightPath(machine.current_State.key, next.key, '#f30a49', "#17b794")
 
   // highlight next state
   highlightNode(next.key)
