@@ -11,6 +11,7 @@
     <script src="lib/go.js"></script>
     <script src="state.js"></script>
     <script src="cilGoJs.js"></script>
+    <script src="button.js"></script>
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -29,7 +30,7 @@
                 <div class="flap outer flap--left"></div>
                 <a class="flap flap__btn" href="#">SomtumMalakorSomtum</a>
 
-                <div class="flap outer flap--right"> </div>
+                <div class="flap outer flap--right"><br>👈<span style="font-size:17px; color:rgb(0, 0, 0);">click</span></div>
             </div>
         </div>
         <a class="replay" href="#" id="js-replay">
@@ -187,13 +188,11 @@
             // On load, call init function
             window.onload = function () {
                 window.location.hash = 'open-modal';
-                init2();
                 init();
+                init2();
             }
         })();
-    // window.onload = () => {
-    //     window.location.hash = 'open-modal'
-    // }
+
     </script>
 
 </body>

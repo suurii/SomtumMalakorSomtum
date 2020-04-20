@@ -174,19 +174,19 @@ function highlightNode(nodeId) {
 // colorText : value of RGB path's textBlock [value also word ex. "#52ce60",'red'] 
 // ex. highlightPath(0,1,'blue','red')
 // if want smth more , contact CXZ na ja 
-function highlightPath(from, to, colorPath, colorText) {
+function highlightPath(from, to, colorPathf, colorTextf,colorPatht, colorTextt) {
   
   for (p of myDiagram.model.linkDataArray) {
     if (p.from == from && p.to == to) {
       // console.log(p);
-      myDiagram.model.set(p, 'colorPath', colorPath);
-      myDiagram.model.set(p, 'colorText', colorText);
+      myDiagram.model.set(p, 'colorPath', colorPathf);
+      myDiagram.model.set(p, 'colorText', colorTextf);
       myDiagram.model.set(p, 'bold', true);
       // break;
     }
     else if(p.from == to){
-      myDiagram.model.set(p, 'colorPath', colorText);
-      myDiagram.model.set(p, 'colorText', colorPath);
+      myDiagram.model.set(p, 'colorPath', colorPatht);
+      myDiagram.model.set(p, 'colorText', colorTextt);
       myDiagram.model.set(p, 'bold', true);
       }
     else{
@@ -288,7 +288,7 @@ function init() {
       new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
       $(go.Shape, "Circle",
         {
-          fill: "#f0ece2", /* green */
+          fill: "#d1d4c9", /* green */
           stroke: null,
           portId: "",
           fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
@@ -390,7 +390,7 @@ function init() {
           margin: 4,
           segmentIndex: 0,
           segmentFraction: 0.2,
-          // background: '#1b1f3a',
+          background: '#121212',
         },
         new go.Binding("text").makeTwoWay(),
         new go.Binding("segmentIndex").makeTwoWay(),
@@ -484,7 +484,7 @@ function handleClick(bottonName) {
 
   // clear highlight path 
 
-  highlightPath(machine.prev_State.key, machine.current_State.key, '#525252', '#eeeeee')
+  highlightPath(machine.prev_State.key, machine.current_State.key, '#9C9C9C','#828282','#9C9C9C','#828282')
 
 
   //set prev state
@@ -494,7 +494,7 @@ function handleClick(bottonName) {
   let next = machine.getNext(bottonName)
 
   // highlight path from current state to next state
-  highlightPath(machine.current_State.key, next.key, '#f30a49', "#17b794")
+  highlightPath(machine.current_State.key, next.key, '#f30a49', "#F08080",'#17b794', "#40E0D0")
 
   // highlight next state
   highlightNode(next.key)
@@ -539,9 +539,9 @@ function handleClick(bottonName) {
     let timerInterval
     Swal.fire({
       title: 'ยินดีด้วย นี่คือเมนู'+document.getElementById('name').innerHTML+'ของคุณ!👍',
-      imageUrl: 'image/kp.png',
-      imageWidth: 250,
-      imageHeight: 250, 
+      imageUrl: 'image/papaya.svg',
+      imageWidth: 150,
+      imageHeight: 130, 
       imageAlt: 'Custom image', 
       timerProgressBar: true,
       timer:3000,
@@ -576,8 +576,8 @@ function resetPathColor(){
   for(let i = 0 ; i < 16 ;i++){
     for(let j = 0 ; j < 16 ;j++){
       // highlightPath(i,j,'#666666','#666666')
-      highlightPath(i,j,'#eeeeee','#525252')
-      highlightPath(-1,-1,'#f30a49','#f30a49')
+      highlightPath(i,j,'#9C9C9C','#9C9C9C','#9C9C9C','#9C9C9C')
+      highlightPath(-1,-1,'#f30a49','#f30a49','#f30a49','#f30a49')
     }
   }
 }

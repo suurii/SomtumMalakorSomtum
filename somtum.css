@@ -1,4 +1,3 @@
-
 @media only screen and (max-width: 1600px) {
   body {
     background-color:#242424;
@@ -22,7 +21,7 @@
   .header h1{
       padding:0;
       text-align:center;
-      font-family: 'TH SarabunPSK';
+      font-family: 'Pattaya';
       font-style: normal;
       font-weight: bold;
       font-size: 45px;
@@ -717,7 +716,7 @@
 }
  .flap {
 	 height: 50px;
-	 background: #af0404;
+	 background: #ac1724;
 }
  .flap__btn {
 	 width: calc((100% - 212px));
@@ -725,11 +724,14 @@
 	 align-items: center;
 	 justify-content: center;
 	 position: relative;
-	 background: #c02739;
-	 color: white;
-	 cursor: pointer;
+	 background: #bd2133;
+	 color: rgb(231, 231, 231);
+   cursor: pointer;
+   font-family: 'Pattaya';
+   letter-spacing: 0.14em;
 	 font-size: 2.25em;
-	 font-weight: 700;
+   font-weight: 0;
+   
 	 text-decoration: none;
 	 z-index: 1;
 	 transition: 0.2s ease;
@@ -1634,9 +1636,11 @@ em{
 	 justify-content: center;
 	 position: relative;
 	 background: #c02739;
-	 color: white;
-	 cursor: pointer;
-	 font-size: 2.25em;
+	 color: rgb(231, 231, 231);
+   cursor: pointer;
+   font-family: 'Pattaya';
+  letter-spacing: 0.2em;
+	 font-size: 2.5em;
 	 font-weight: 700;
 	 text-decoration: none;
 	 z-index: 1;
@@ -1656,6 +1660,7 @@ em{
 	 border-bottom-left-radius: 25px;
 	 transform-origin: top right;
 }
+
  .flap--right {
 	 border-bottom-right-radius: 25px;
 	 transform-origin: top left;
